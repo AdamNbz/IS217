@@ -35,7 +35,7 @@
 | STT    | MSSV          | Họ và Tên              | Github                                               | Email                   |
 | ------ |:-------------:| ----------------------:|-----------------------------------------------------:|-------------------------:
 | 1      | 23520131      | Nguyễn Võ Ngọc Bảo     |[AdamNbz](https://github.com/AdamNbz)                 |23520131@gm.uit.edu.vn   |
-| 2      | 23520065      | Nguyễn Ngọc Mai Anh    |[...](https://github.com/...)                         |23520065@gm.uit.edu.vn   |
+| 2      | 23520065      | Nguyễn Ngọc Mai Anh    |[maianhUIT29](https://github.com/maianhUIT29)         |23520065@gm.uit.edu.vn   |
  
 
 ## SEMINAR
