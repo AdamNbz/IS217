@@ -1,0 +1,779 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/13/2025 11:25:28 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ADAM-DESKTOP"
+  DTS:CreatorName="ADAM-DESKTOP\Admin"
+  DTS:DTSID="{86090AE9-273D-450D-9318-A77CE30DE237}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{5F50B973-F8D5-41C3-ABB1-7C87834BD459}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6A092644-E070-4AC3-B8E3-B41270E21B27}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\Admin\OneDrive\Documents\GitHub\IS217\Datasets\car_sales_data_cleaned.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="brand"
+              DTS:DTSID="{658FBCC6-1538-4736-950C-18C85EB80906}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="model"
+              DTS:DTSID="{05CAD1D8-6E3E-40A9-82D5-F7E6FF1F1063}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="engine_size"
+              DTS:DTSID="{07AEE310-8F65-4219-9F33-9AFC5085A04F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fuel_type"
+              DTS:DTSID="{58A22836-0C05-448B-9C66-7A0E594F7ADD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{814618BE-5F5E-4CEB-812E-3BA161E50E4A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="mileage_km"
+              DTS:DTSID="{96B55077-FE74-4670-9656-A6671428C648}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="price_usd"
+              DTS:DTSID="{45F8BF51-00E0-424A-9B7E-9A0693FB294C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age"
+              DTS:DTSID="{D692CE60-0D06-4D5A-B00C-478BA1E727F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="price_per_1k_km"
+              DTS:DTSID="{B6EB5EBF-002B-461F-A12F-5FC4DD4C9D7B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="mileage_bucket"
+              DTS:DTSID="{CA2AA4EF-4AFF-455A-B0FE-8EACC6E848FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age_bucket"
+              DTS:DTSID="{C3AC9D2E-9E17-443F-8A4B-0F9EFF7B14C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="overprice_threshold"
+              DTS:DTSID="{2AE9DD31-6E45-4B66-827B-32EC6EC114FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="is_overpriced"
+              DTS:DTSID="{91B096DA-B14C-46BE-8ED8-572A48758ECB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Dim &amp; Fact_Raw table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3EC3FB30-8C60-427F-98F0-A4EBC3597CF0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Dim &amp; Fact_Raw table">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[brand]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[brand]"
+                      length="1000"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[brand]"
+                      name="brand"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[model]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[model]"
+                      length="1000"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[model]"
+                      name="model"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[engine_size]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[engine_size]"
+                      length="50"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[engine_size]"
+                      name="engine_size"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[fuel_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[fuel_type]"
+                      length="1000"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[fuel_type]"
+                      name="fuel_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[year]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      length="50"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[mileage_km]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[mileage_km]"
+                      length="50"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[mileage_km]"
+                      name="mileage_km"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[price_usd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[price_usd]"
+                      length="50"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[price_usd]"
+                      name="price_usd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[age]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      length="50"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[price_per_1k_km]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[price_per_1k_km]"
+                      length="50"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[price_per_1k_km]"
+                      name="price_per_1k_km"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[mileage_bucket]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[mileage_bucket]"
+                      length="50"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[mileage_bucket]"
+                      name="mileage_bucket"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[age_bucket]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_bucket]"
+                      length="50"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[age_bucket]"
+                      name="age_bucket"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[overprice_threshold]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[overprice_threshold]"
+                      length="50"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[overprice_threshold]"
+                      name="overprice_threshold"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[is_overpriced]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[is_overpriced]"
+                      length="50"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].Columns[is_overpriced]"
+                      name="is_overpriced"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[brand]"
+                      codePage="65001"
+                      dataType="str"
+                      length="1000"
+                      name="brand" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[model]"
+                      codePage="65001"
+                      dataType="str"
+                      length="1000"
+                      name="model" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[engine_size]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="engine_size" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[fuel_type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="1000"
+                      name="fuel_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[mileage_km]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="mileage_km" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[price_usd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="price_usd" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[price_per_1k_km]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="price_per_1k_km" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[mileage_bucket]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="mileage_bucket" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_bucket]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="age_bucket" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[overprice_threshold]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="overprice_threshold" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[is_overpriced]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="is_overpriced" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim &amp; Fact_Raw table\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Load Dim &amp; Fact_Raw table\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim &amp; Fact_Raw table\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Load Dim &amp; Fact_Raw table\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Dim &amp; Fact_Raw table\Multicast.Outputs[Multicast Output 2]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\Load Dim &amp; Fact_Raw table\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim &amp; Fact_Raw table\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Dim &amp; Fact_Raw table\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim &amp; Fact_Raw table\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Dim &amp; Fact_Raw table.Paths[Flat File Source Output]"
+              endId="Package\Load Dim &amp; Fact_Raw table\Multicast.Inputs[Multicast Input 1]"
+              name="Flat File Source Output"
+              startId="Package\Load Dim &amp; Fact_Raw table\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load Dim &amp; Fact_Raw table.Paths[Multicast Output 1]"
+              endId="Package\Load Dim &amp; Fact_Raw table\Sort.Inputs[Sort Input]"
+              name="Multicast Output 1"
+              startId="Package\Load Dim &amp; Fact_Raw table\Multicast.Outputs[Multicast Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Load Dim &amp; Fact_Raw table"
+          TopLeft="282.5,218.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Dim &amp; Fact_Raw table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load Dim &amp; Fact_Raw table\Flat File Source"
+          TopLeft="320,195" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Load Dim &amp; Fact_Raw table\Multicast"
+          TopLeft="603,198" />
+        <EdgeLayout
+          Id="Package\Load Dim &amp; Fact_Raw table.Paths[Flat File Source Output]"
+          TopLeft="476,217.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127,0"
+              Start="0,0"
+              End="119.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="119.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Load Dim &amp; Fact_Raw table\Sort"
+          TopLeft="831,135" />
+        <EdgeLayout
+          Id="Package\Load Dim &amp; Fact_Raw table.Paths[Multicast Output 1]"
+          TopLeft="726,219">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105,-63"
+              Start="0,0"
+              End="97.5,-63">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.5,0"
+                    Point2="52.5,0"
+                    Point3="52.5,-4" />
+                  <mssgle:LineSegment
+                    End="52.5,-59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.5,-59"
+                    Point2="52.5,-63"
+                    Point3="56.5,-63" />
+                  <mssgle:LineSegment
+                    End="97.5,-63" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

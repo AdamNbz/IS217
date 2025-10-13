@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "CarListing_SSIS", "CarListing_SSIS.dtproj", "{D7746418-E2EF-88A7-E84B-0F63E92CD10A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7746418-E2EF-88A7-E84B-0F63E92CD10A}.Development|Default.ActiveCfg = Development
+		{D7746418-E2EF-88A7-E84B-0F63E92CD10A}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCDCD3CD-BB6E-4B9F-95D4-C03AF0DD74CF}
+	EndGlobalSection
+EndGlobal
