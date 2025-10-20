@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="MAIANHSHP"
+  DTS:DTSID="{D4DAAFA0-9E27-40CA-99A8-56BC0FD597D9}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=MAIANHSHP;Provider=MSOLEDBSQL19.1;Integrated Security=SSPI;Application Name=SSIS-{D4DAAFA0-9E27-40CA-99A8-56BC0FD597D9}MAIANHSHP;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
