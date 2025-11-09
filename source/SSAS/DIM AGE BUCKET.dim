@@ -1,0 +1,160 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="0ee8509a-eb32-4954-9cb1-f84e1cde9c4c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DIM AGE BUCKET</ID>
+  <Name>DIM AGE BUCKET</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="eb66dbe7-9359-414e-a44f-241157b175a6">
+    <DataSourceViewID>SSIS</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="9ca7d989-c816-4888-ac19-a71395d0bcde">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="bcb884e0-2401-483f-8106-a57242997473">
+      <ID>Age Bucket Id</ID>
+      <Name>Age Bucket Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d6c475b5-8631-4ebf-9f0d-10f3b994efe8">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0c22fd85-8b7c-4d91-9d8f-31613369ae80">
+            <TableID>dbo_DIM_AGE_BUCKET</TableID>
+            <ColumnID>age_bucket_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="eeba1846-4b8c-4fd3-bb24-a1e75ce5ef3c">
+          <AttributeID>Age Bucket Label</AttributeID>
+          <Name>Age Bucket Label</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="59756ccf-3493-482e-ac0e-3f73e43df8b3">
+          <AttributeID>Age Bucket Order</AttributeID>
+          <Name>Age Bucket Order</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4bb48adb-7fc2-41de-ae7c-b0ebbebb78fe">
+          <AttributeID>Min Age</AttributeID>
+          <Name>Min Age</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="eac5508c-7c29-4708-ba68-d95291dc2c18">
+          <AttributeID>Max Age</AttributeID>
+          <Name>Max Age</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bed2c75a-b962-41a8-ad6c-6fa3fe3ca42c">
+      <ID>Age Bucket Label</ID>
+      <Name>Age Bucket Label</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="598f5ef2-4fa0-45cc-951d-610c994138bd">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e8d57aa0-ff92-4bb6-af6e-16b3924214e6">
+            <TableID>dbo_DIM_AGE_BUCKET</TableID>
+            <ColumnID>age_bucket_label</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="261a5abb-e20b-4066-93ac-527976806c95">
+      <ID>Age Bucket Order</ID>
+      <Name>Age Bucket Order</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="858cf156-232f-4eec-afdd-2cc44d7b226d">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6ef244e2-d332-4570-a09b-517380c85dde">
+            <TableID>dbo_DIM_AGE_BUCKET</TableID>
+            <ColumnID>age_bucket_order</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b69be727-4dc7-41a2-a33f-0f3327ebaa5b">
+      <ID>Min Age</ID>
+      <Name>Min Age</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3b7a2d92-94fd-4d6b-adcf-0f97ac6b72b1">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c008a43f-99dc-42b7-9077-3fcf24f27e2b">
+            <TableID>dbo_DIM_AGE_BUCKET</TableID>
+            <ColumnID>min_age</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7eba391a-585b-4796-b7e4-6b79156e60b6">
+      <ID>Max Age</ID>
+      <Name>Max Age</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4b99178f-bfdb-48c9-ba15-239d46daad0a">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="004f1cba-ebc1-4b4d-8d34-e9faaa10a9a0">
+            <TableID>dbo_DIM_AGE_BUCKET</TableID>
+            <ColumnID>max_age</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -1,0 +1,103 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>SSAS</Database>
+    <Server>ADAM-DESKTOP\ADAMNBZ</Server>
+    <ConnectionString>Data Source=ADAM-DESKTOP\ADAMNBZ;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>2IAaa5rh++Mq2bVxDq3bspPHKnM=11/9/2025 10:22:04 PM11/9/2025 10:22:04 PM</TimeStamp>
+        <ID>
+          <String>SSIS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>Wkf4euxmQSq+NPqD5E4Ei+Ktzzo=11/10/2025 12:39:15 AM11/9/2025 10:22:16 PM</TimeStamp>
+        <ID>
+          <String>SSIS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Nae39rZzK2y5nOKho2B0tV7Ihgs=11/9/2025 10:22:27 PM11/9/2025 10:22:27 PM</TimeStamp>
+        <ID>
+          <String>DIM AGE BUCKET</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>lpjQaL4NbAhZft1141yObgsTvnk=11/9/2025 10:22:34 PM11/9/2025 10:22:34 PM</TimeStamp>
+        <ID>
+          <String>DIM BRAND</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>T8nWIO4TsXnd62GvRnLTsswgBGw=11/9/2025 10:22:41 PM11/9/2025 10:22:41 PM</TimeStamp>
+        <ID>
+          <String>DIM ENGINE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Y4j6nFVgTdPTPx1P2BQYGSeuVfs=11/9/2025 10:22:49 PM11/9/2025 10:22:49 PM</TimeStamp>
+        <ID>
+          <String>DIM FUEL</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>eukAYkd7oomP5nvxU6M7veYN1Vw=11/9/2025 10:22:59 PM11/9/2025 10:22:59 PM</TimeStamp>
+        <ID>
+          <String>DIM MILEAGE BUCKET</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>bUDLs0MkV9nV+KeRswz+g+uYOEg=11/9/2025 11:09:06 PM11/9/2025 10:23:08 PM</TimeStamp>
+        <ID>
+          <String>DIM MODEL</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>iuzrn4J6b9Gj7QCvm5F64P0oX7c=11/9/2025 11:12:20 PM11/9/2025 10:23:16 PM</TimeStamp>
+        <ID>
+          <String>DIM YEAR</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>jhoVDR8jm+R4FQrAiR4+EyN39uM=11/10/2025 12:58:27 AM11/9/2025 10:23:43 PM2QDgPiF8zC3aXaNVRlLKpQxFb+M=11/10/2025 12:00:05 AM11/9/2025 10:23:43 PM</TimeStamp>
+        <ID>
+          <String>SSIS</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>0BbQhpLUkEYEm2VR3qy71/g6m9E=11/9/2025 10:21:30 PM11/9/2025 10:21:30 PM</TimeStamp>
+      <ID>
+        <String>SSAS</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-11-09T17:58:30.93Z</LastDeployed>
+</DeploymentSnapshot>
