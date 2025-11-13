@@ -7,36 +7,8 @@
       "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:SSIS.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\SSIS.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:SSIS.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM BRAND.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:DIM BRAND.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM YEAR.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:DIM YEAR.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM MODEL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:DIM MODEL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM AGE BUCKET.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:DIM AGE BUCKET.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM MILEAGE BUCKET.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:DIM MILEAGE BUCKET.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM FUEL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:DIM FUEL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM ENGINE.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:DIM ENGINE.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,21 +18,23 @@
       "DocumentGroups": [
         {
           "DockedHeight": 195,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{7cc9e714-2774-4fc6-8631-a07eee703286}"
-            }
-          ]
-        },
-        {
-          "DockedHeight": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DIM MODEL.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM MODEL.dim",
+              "RelativeDocumentMoniker": "DIM MODEL.dim",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM MODEL.dim [Design]",
+              "RelativeToolTip": "DIM MODEL.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-13T17:29:02.654Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -71,101 +45,18 @@
               "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\SSIS.cube [Design]",
               "RelativeToolTip": "SSIS.cube [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-09T15:23:44.157Z",
+              "WhenOpened": "2025-11-13T17:06:24.296Z",
               "EditorCaption": " [Design]"
-            },
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DIM YEAR.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM YEAR.dim",
-              "RelativeDocumentMoniker": "DIM YEAR.dim",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM YEAR.dim [Design]",
-              "RelativeToolTip": "DIM YEAR.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-09T15:23:16.405Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DIM MODEL.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM MODEL.dim",
-              "RelativeDocumentMoniker": "DIM MODEL.dim",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM MODEL.dim [Design]",
-              "RelativeToolTip": "DIM MODEL.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-09T15:23:08.524Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DIM MILEAGE BUCKET.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM MILEAGE BUCKET.dim",
-              "RelativeDocumentMoniker": "DIM MILEAGE BUCKET.dim",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM MILEAGE BUCKET.dim [Design]",
-              "RelativeToolTip": "DIM MILEAGE BUCKET.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-09T15:22:59.533Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DIM FUEL.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM FUEL.dim",
-              "RelativeDocumentMoniker": "DIM FUEL.dim",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM FUEL.dim [Design]",
-              "RelativeToolTip": "DIM FUEL.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-09T15:22:49.773Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DIM ENGINE.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM ENGINE.dim",
-              "RelativeDocumentMoniker": "DIM ENGINE.dim",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM ENGINE.dim [Design]",
-              "RelativeToolTip": "DIM ENGINE.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-09T15:22:41.574Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DIM BRAND.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM BRAND.dim",
-              "RelativeDocumentMoniker": "DIM BRAND.dim",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM BRAND.dim [Design]",
-              "RelativeToolTip": "DIM BRAND.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-09T15:22:34.655Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DIM AGE BUCKET.dim [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM AGE BUCKET.dim",
-              "RelativeDocumentMoniker": "DIM AGE BUCKET.dim",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM AGE BUCKET.dim [Design]",
-              "RelativeToolTip": "DIM AGE BUCKET.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-09T15:22:27.312Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SSIS.dsv [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\SSIS.dsv",
-              "RelativeDocumentMoniker": "SSIS.dsv",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\SSIS.dsv [Design]",
-              "RelativeToolTip": "SSIS.dsv [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-09T15:22:17.463Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

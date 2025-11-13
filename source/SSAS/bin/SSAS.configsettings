@@ -3,7 +3,7 @@
     <DataSources>
       <DataSource>
         <ID>SSIS</ID>
-        <ConnectionString>Provider=MSOLEDBSQL.1;Data Source=Adam-Desktop\MSSQLSERVER01;Integrated Security=SSPI;Initial Catalog=SSIS</ConnectionString>
+        <ConnectionString>Provider=SQLOLEDB.1;Data Source=ADAM-DESKTOP\MSSQLSERVER01;Integrated Security=SSPI;Initial Catalog=SSIS</ConnectionString>
         <ImpersonationInfo>
           <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateServiceAccount</ImpersonationMode>
           <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
@@ -15,13 +15,13 @@
         <ID>DIM AGE BUCKET</ID>
       </Dimension>
       <Dimension>
+        <ID>DIM YEAR</ID>
+      </Dimension>
+      <Dimension>
         <ID>DIM BRAND</ID>
       </Dimension>
       <Dimension>
         <ID>DIM ENGINE</ID>
-      </Dimension>
-      <Dimension>
-        <ID>DIM FUEL</ID>
       </Dimension>
       <Dimension>
         <ID>DIM MILEAGE BUCKET</ID>
@@ -30,7 +30,7 @@
         <ID>DIM MODEL</ID>
       </Dimension>
       <Dimension>
-        <ID>DIM YEAR</ID>
+        <ID>DIM FUEL</ID>
       </Dimension>
     </Dimensions>
     <Cubes>

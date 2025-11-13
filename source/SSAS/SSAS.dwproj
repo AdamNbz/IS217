@@ -24,16 +24,16 @@
       <FullPath>DIM AGE BUCKET.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>DIM YEAR.dim</Name>
+      <FullPath>DIM YEAR.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>DIM BRAND.dim</Name>
       <FullPath>DIM BRAND.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>DIM ENGINE.dim</Name>
       <FullPath>DIM ENGINE.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DIM FUEL.dim</Name>
-      <FullPath>DIM FUEL.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>DIM MILEAGE BUCKET.dim</Name>
@@ -44,8 +44,8 @@
       <FullPath>DIM MODEL.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>DIM YEAR.dim</Name>
-      <FullPath>DIM YEAR.dim</FullPath>
+      <Name>DIM FUEL.dim</Name>
+      <FullPath>DIM FUEL.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -68,7 +68,7 @@
           <ConfigurationSetting>
             <Id>SSIS</Id>
             <Name>SSIS</Name>
-            <Value xsi:type="xsd:string">Provider=MSOLEDBSQL.1;Data Source=Adam-Desktop\MSSQLSERVER01;Integrated Security=SSPI;Initial Catalog=SSIS</Value>
+            <Value xsi:type="xsd:string">Provider=SQLOLEDB.1;Data Source=ADAM-DESKTOP\MSSQLSERVER01;Integrated Security=SSPI;Initial Catalog=SSIS</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>

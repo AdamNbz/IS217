@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{AB9F12BA-4364-40E1-8FAC-8ADAD73B9727}">
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{EEEC8E20-FFE7-400B-880C-9FF8B7A4DF30}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -373,7 +373,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{69F031A3-B466-4EFF-8309-09EEFBC28011}"
-          SQLTask:SqlStatementSource="ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Brand FOREIGN KEY ([brand_id]) REFERENCES [DIM_BRAND]([brand_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Model FOREIGN KEY ([model_id]) REFERENCES [DIM_MODEL]([model_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Fuel FOREIGN KEY ([fuel_id]) REFERENCES [DIM_FUEL]([fuel_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Engine FOREIGN KEY ([engine_id]) REFERENCES [DIM_ENGINE]([engine_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Year FOREIGN KEY ([year_id]) REFERENCES [DIM_YEAR]([year_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Mileage FOREIGN KEY ([mileage_bucket_id]) REFERENCES [DIM_MILEAGE_BUCKET]([mileage_bucket_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Age FOREIGN KEY ([age_bucket_id]) REFERENCES [DIM_AGE_BUCKET]([age_bucket_id]);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="ALTER TABLE [DIM_MODEL]&#xA;ADD CONSTRAINT FK_DIM_Brand FOREIGN KEY ([brand_id]) REFERENCES [DIM_BRAND]([brand_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Brand FOREIGN KEY ([brand_id]) REFERENCES [DIM_BRAND]([brand_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Model FOREIGN KEY ([model_id]) REFERENCES [DIM_MODEL]([model_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Fuel FOREIGN KEY ([fuel_id]) REFERENCES [DIM_FUEL]([fuel_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Engine FOREIGN KEY ([engine_id]) REFERENCES [DIM_ENGINE]([engine_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Year FOREIGN KEY ([year_id]) REFERENCES [DIM_YEAR]([year_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Mileage FOREIGN KEY ([mileage_bucket_id]) REFERENCES [DIM_MILEAGE_BUCKET]([mileage_bucket_id]);&#xA;&#xA;ALTER TABLE [FACT_CAR_LISTING]&#xA;ADD CONSTRAINT FK_Fact_Age FOREIGN KEY ([age_bucket_id]) REFERENCES [DIM_AGE_BUCKET]([age_bucket_id]);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1003,7 +1003,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DIM_AGE_BUCKET]</property>
+                  name="OpenRowset">[DIM_AGE_BUCKET]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2888,7 +2888,7 @@
                       cachedLength="50"
                       cachedName="engine_size"
                       cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\DIM_Engine\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[engine_size_l]"
+                      externalMetadataColumnId="Package\DIM_Engine\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[engine_type]"
                       lineageId="Package\DIM_Engine\Sort.Outputs[Sort Output].Columns[engine_size]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -2898,11 +2898,11 @@
                       dataType="i4"
                       name="engine_id" />
                     <externalMetadataColumn
-                      refId="Package\DIM_Engine\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[engine_size_l]"
+                      refId="Package\DIM_Engine\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[engine_type]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="engine_size_l" />
+                      name="engine_type" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3646,7 +3646,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DIM_FUEL]</property>
+                  name="OpenRowset">[DIM_FUEL]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4823,6 +4823,167 @@
           version="1">
           <components>
             <component
+              refId="Package\DIM_Model\BRAND"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="BRAND"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DIM_BRAND]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DIM_BRAND]) [refTable]
+where [refTable].[brand_name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="brand_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="brand_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DIM_Model\Sort.Outputs[Sort Output].Columns[brand]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM_Model\BRAND.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Adam-Desktop\MSSQLSERVER01.SSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[Adam-Desktop\MSSQLSERVER01.SSIS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM_Model\BRAND.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM_Model\BRAND.Inputs[Lookup Input].Columns[brand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="brand"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\DIM_Model\Sort.Outputs[Sort Output].Columns[brand]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">brand_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM_Model\BRAND.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DIM_Model\BRAND.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM_Model\BRAND.Outputs[Lookup Match Output].Columns[brand_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DIM_Model\BRAND.Outputs[Lookup Match Output].Columns[brand_id]"
+                      name="brand_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">brand_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIM_Model\BRAND.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DIM_Model\BRAND.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIM_Model\BRAND.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DIM_Model\BRAND.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM_Model\BRAND.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM_Model\BRAND.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM_Model\BRAND.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM_Model\BRAND.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DIM_Model\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -5500,6 +5661,12 @@
                       cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\DIM_Model\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[model_name]"
                       lineageId="Package\DIM_Model\Sort.Outputs[Sort Output].Columns[model]" />
+                    <inputColumn
+                      refId="Package\DIM_Model\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[brand_id]"
+                      cachedDataType="i4"
+                      cachedName="brand_id"
+                      externalMetadataColumnId="Package\DIM_Model\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[brand_id]"
+                      lineageId="Package\DIM_Model\BRAND.Outputs[Lookup Match Output].Columns[brand_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5513,6 +5680,10 @@
                       dataType="str"
                       length="50"
                       name="model_name" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_Model\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[brand_id]"
+                      dataType="i4"
+                      name="brand_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5582,6 +5753,24 @@
                           name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\DIM_Model\Sort.Inputs[Sort Input].Columns[brand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="brand"
+                      lineageId="Package\DIM_Model\Flat File Source.Outputs[Flat File Source Output].Columns[brand]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -5608,6 +5797,22 @@
                           name="SortColumnId">#{Package\DIM_Model\Flat File Source.Outputs[Flat File Source Output].Columns[model]}</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\DIM_Model\Sort.Outputs[Sort Output].Columns[brand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DIM_Model\Sort.Outputs[Sort Output].Columns[brand]"
+                      name="brand"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DIM_Model\Flat File Source.Outputs[Flat File Source Output].Columns[brand]}</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -5621,8 +5826,13 @@
               name="Flat File Source Output"
               startId="Package\DIM_Model\Flat File Source.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\DIM_Model.Paths[Sort Output]"
+              refId="Package\DIM_Model.Paths[Lookup Match Output]"
               endId="Package\DIM_Model\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\DIM_Model\BRAND.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DIM_Model.Paths[Sort Output]"
+              endId="Package\DIM_Model\BRAND.Inputs[Lookup Input]"
               name="Sort Output"
               startId="Package\DIM_Model\Sort.Outputs[Sort Output]" />
           </paths>
@@ -6857,7 +7067,7 @@ where [refTable].[brand_name] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DIM_ENGINE]) [refTable]
-where [refTable].[engine_size_l] = ?</property>
+where [refTable].[engine_type] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -6888,7 +7098,7 @@ where [refTable].[engine_size_l] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="engine_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="engine_size_l" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="engine_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="engine_type" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -6927,7 +7137,7 @@ where [refTable].[engine_size_l] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">engine_size_l</property>
+                          name="JoinToReferenceColumn">engine_type</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -7985,7 +8195,7 @@ where [refTable].[mileage_bucket_label] = ? and [refTable].[mileage_bucket_order
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DIM_MODEL]) [refTable]
-where [refTable].[model_name] = ?</property>
+where [refTable].[model_name] = ? and [refTable].[brand_id] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -8016,12 +8226,12 @@ where [refTable].[model_name] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="model_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="model_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="model_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="brand_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="model_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\FACT_Car_Listing\Flat File Source.Outputs[Flat File Source Output].Columns[model]};</property>
+                  name="ParameterMap">#{Package\FACT_Car_Listing\Flat File Source.Outputs[Flat File Source Output].Columns[model]};#{Package\FACT_Car_Listing\BRAND.Outputs[Lookup Match Output].Columns[brand_id]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8056,6 +8266,22 @@ where [refTable].[model_name] = ?</property>
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
                           name="JoinToReferenceColumn">model_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FACT_Car_Listing\MODEL.Inputs[Lookup Input].Columns[brand_id]"
+                      cachedDataType="i4"
+                      cachedName="brand_id"
+                      lineageId="Package\FACT_Car_Listing\BRAND.Outputs[Lookup Match Output].Columns[brand_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">brand_id</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -8543,44 +8769,44 @@ where [refTable].[manufacture_year] = ?</property>
           <paths>
             <path
               refId="Package\FACT_Car_Listing.Paths[Flat File Source Output]"
-              endId="Package\FACT_Car_Listing\MODEL.Inputs[Lookup Input]"
+              endId="Package\FACT_Car_Listing\BRAND.Inputs[Lookup Input]"
               name="Flat File Source Output"
               startId="Package\FACT_Car_Listing\Flat File Source.Outputs[Flat File Source Output]" />
             <path
               refId="Package\FACT_Car_Listing.Paths[Lookup Match Output]"
-              endId="Package\FACT_Car_Listing\FUEL.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FACT_Car_Listing\MODEL.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output1]"
-              endId="Package\FACT_Car_Listing\BRAND.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FACT_Car_Listing\FUEL.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output2]"
-              endId="Package\FACT_Car_Listing\YEAR.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FACT_Car_Listing\BRAND.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output3]"
               endId="Package\FACT_Car_Listing\ENGINE.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\FACT_Car_Listing\YEAR.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output4]"
+              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output1]"
               endId="Package\FACT_Car_Listing\AGE_BUCKET.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\FACT_Car_Listing\ENGINE.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output5]"
+              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output2]"
               endId="Package\FACT_Car_Listing\MILEAGE_BUCKET.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\FACT_Car_Listing\AGE_BUCKET.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output6]"
+              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output3]"
               endId="Package\FACT_Car_Listing\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
               startId="Package\FACT_Car_Listing\MILEAGE_BUCKET.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output4]"
+              endId="Package\FACT_Car_Listing\FUEL.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FACT_Car_Listing\BRAND.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output5]"
+              endId="Package\FACT_Car_Listing\MODEL.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FACT_Car_Listing\FUEL.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FACT_Car_Listing.Paths[Lookup Match Output6]"
+              endId="Package\FACT_Car_Listing\YEAR.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FACT_Car_Listing\MODEL.Outputs[Lookup Match Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -8599,7 +8825,7 @@ where [refTable].[manufacture_year] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{69F031A3-B466-4EFF-8309-09EEFBC28011}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Brand')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Brand;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Model')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Model;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Fuel')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Fuel;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Engine')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Engine;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Year')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Year;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Mileage')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Mileage;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Age')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Age;&#xA;&#xA;&#xA;&#xA;TRUNCATE TABLE [FACT_CAR_LISTING];&#xA;&#xA;TRUNCATE TABLE [DIM_BRAND];&#xA;TRUNCATE TABLE [DIM_MODEL];&#xA;TRUNCATE TABLE [DIM_FUEL];&#xA;TRUNCATE TABLE [DIM_ENGINE];&#xA;TRUNCATE TABLE [DIM_YEAR];&#xA;TRUNCATE TABLE [DIM_MILEAGE_BUCKET];&#xA;TRUNCATE TABLE [DIM_AGE_BUCKET];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_DIM_Brand')&#xA;&#x9;ALTER TABLE [DIM_MODEL] DROP CONSTRAINT FK_DIM_Brand;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Brand')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Brand;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Model')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Model;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Fuel')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Fuel;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Engine')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Engine;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Year')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Year;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Mileage')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Mileage;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.foreign_keys WHERE name = 'FK_Fact_Age')&#xA;    ALTER TABLE [FACT_CAR_LISTING] DROP CONSTRAINT FK_Fact_Age;&#xA;&#xA;&#xA;TRUNCATE TABLE [FACT_CAR_LISTING];&#xA;&#xA;TRUNCATE TABLE [DIM_BRAND];&#xA;TRUNCATE TABLE [DIM_MODEL];&#xA;TRUNCATE TABLE [DIM_FUEL];&#xA;TRUNCATE TABLE [DIM_ENGINE];&#xA;TRUNCATE TABLE [DIM_YEAR];&#xA;TRUNCATE TABLE [DIM_MILEAGE_BUCKET];&#xA;TRUNCATE TABLE [DIM_AGE_BUCKET];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -8607,24 +8833,24 @@ where [refTable].[manufacture_year] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{0FE6A686-2B18-4E59-A4F3-DF6901DBBF69}"
-      DTS:From="Package\DIM_Model"
+      DTS:DTSID="{C42DB271-5801-4B86-A7F0-EEC9BD6E4A4F}"
+      DTS:From="Package\DIM_Fuel"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\DIM_Fuel" />
+      DTS:To="Package\DIM_Model" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{7D467018-1B8F-4630-824A-9C2D3FCF3976}"
-      DTS:From="Package\DIM_Fuel"
+      DTS:DTSID="{E021D3C7-C671-4AE6-A42B-5F912FDCC06D}"
+      DTS:From="Package\DIM_Brand"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\DIM_Brand" />
+      DTS:To="Package\DIM_Fuel" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{F8B75BDC-8AE3-42F5-B988-F727CE3F76CF}"
-      DTS:From="Package\DIM_Brand"
+      DTS:DTSID="{28F529FB-DA44-4B6D-8CA6-18CB472DEB14}"
+      DTS:From="Package\DIM_Model"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\DIM_Year" />
@@ -8669,13 +8895,13 @@ where [refTable].[manufacture_year] = ?</property>
       DTS:ObjectName="Constraint 7"
       DTS:To="Package\CREATE FOREIGN KEY" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
-      DTS:DTSID="{613EBF23-3990-4F31-AD35-A247C6B4CDAD}"
+      DTS:DTSID="{E43CAD5E-31FA-48D6-9083-8E23F8605D14}"
       DTS:From="Package\RESET DATABASE"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 8"
-      DTS:To="Package\DIM_Model" />
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\DIM_Brand" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -8690,63 +8916,43 @@ where [refTable].[manufacture_year] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="135,42"
-          Id="Package\DIM_Model"
-          TopLeft="243,166" />
+          Size="202,42"
+          Id="Package\CREATE FOREIGN KEY"
+          TopLeft="776,530" />
         <NodeLayout
-          Size="127,42"
-          Id="Package\DIM_Fuel"
-          TopLeft="259,269" />
-        <NodeLayout
-          Size="135,42"
-          Id="Package\DIM_Brand"
-          TopLeft="478,167" />
-        <NodeLayout
-          Size="128,42"
-          Id="Package\DIM_Year"
-          TopLeft="492,278" />
-        <NodeLayout
-          Size="140,42"
-          Id="Package\DIM_Engine"
-          TopLeft="699,177" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\DIM_Age_Bucket"
-          TopLeft="703,318" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\DIM_Mileage_Bucket"
-          TopLeft="263,377" />
+          Size="177,42"
+          Id="Package\RESET DATABASE"
+          TopLeft="55,57" />
         <NodeLayout
           Size="170,42"
           Id="Package\FACT_Car_Listing"
           TopLeft="570,421" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="310.5,208">
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="655,463">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12,61"
+              EndConnector="222,67"
               Start="0,0"
-              End="12,53.5">
+              End="222,59.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,29.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="4,30.5" />
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
                   <mssgle:LineSegment
-                    End="8,30.5" />
+                    End="218,33.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="8,30.5"
-                    Point2="12,30.5"
-                    Point3="12,34.5" />
+                    Point1="218,33.5"
+                    Point2="222,33.5"
+                    Point3="222,37.5" />
                   <mssgle:LineSegment
-                    End="12,53.5" />
+                    End="222,59.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8755,100 +8961,60 @@ where [refTable].[manufacture_year] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="342.333333333333,269">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="182,-60"
-              Start="0,0"
-              End="182,-52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-26.027166223329" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-26.027166223329"
-                    Point2="0,-30.027166223329"
-                    Point3="4,-30.027166223329" />
-                  <mssgle:LineSegment
-                    End="178,-30.027166223329" />
-                  <mssgle:CubicBezierSegment
-                    Point1="178,-30.027166223329"
-                    Point2="182,-30.027166223329"
-                    Point3="182,-34.027166223329" />
-                  <mssgle:LineSegment
-                    End="182,-52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="566.666666666667,209">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-30.6666666666666,69"
-              Start="0,0"
-              End="-30.6666666666666,61.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.4728743120297" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.4728743120297"
-                    Point2="0,34.4728743120297"
-                    Point3="-4,34.4728743120297" />
-                  <mssgle:LineSegment
-                    End="-26.6666666666666,34.4728743120297" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-26.6666666666666,34.4728743120297"
-                    Point2="-30.6666666666666,34.4728743120297"
-                    Point3="-30.6666666666666,38.4728743120297" />
-                  <mssgle:LineSegment
-                    End="-30.6666666666666,61.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="125,42"
+          Id="Package\DIM_Year"
+          TopLeft="492,278" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\DIM_Model"
+          TopLeft="418.555555555556,162.666666666667" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DIM_Mileage_Bucket"
+          TopLeft="261.888888888889,377" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\DIM_Fuel"
+          TopLeft="259,269" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\DIM_Engine"
+          TopLeft="699,177" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\DIM_Brand"
+          TopLeft="236.888888888889,149.222222222222" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\DIM_Age_Bucket"
+          TopLeft="703,318" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="576,278">
+          TopLeft="574,278">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="171,-59"
+              EndConnector="173,-59"
               Start="0,0"
-              End="171,-51.5">
+              End="173,-51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-25.5383615084525" />
+                    End="0,-25.5490848585691" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-25.5383615084525"
-                    Point2="0,-29.5383615084525"
-                    Point3="4,-29.5383615084525" />
+                    Point1="0,-25.5490848585691"
+                    Point2="0,-29.5490848585691"
+                    Point3="4,-29.5490848585691" />
                   <mssgle:LineSegment
-                    End="167,-29.5383615084525" />
+                    End="169,-29.5490848585691" />
                   <mssgle:CubicBezierSegment
-                    Point1="167,-29.5383615084525"
-                    Point2="171,-29.5383615084525"
-                    Point3="171,-33.5383615084525" />
+                    Point1="169,-29.5490848585691"
+                    Point2="173,-29.5490848585691"
+                    Point3="173,-33.5490848585691" />
                   <mssgle:LineSegment
-                    End="171,-51.5" />
+                    End="173,-51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8885,26 +9051,26 @@ where [refTable].[manufacture_year] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-256,59"
+              EndConnector="-257.111111111111,53.3333333333333"
               Start="0,0"
-              End="-248.5,59">
+              End="-249.611111111111,53.3333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-124,0" />
+                    End="-144.605504587156,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-124,0"
-                    Point2="-128,0"
-                    Point3="-128,4" />
+                    Point1="-144.605504587156,0"
+                    Point2="-148.605504587156,0"
+                    Point3="-148.605504587156,4" />
                   <mssgle:LineSegment
-                    End="-128,55" />
+                    End="-148.605504587156,49.3333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="-128,55"
-                    Point2="-128,59"
-                    Point3="-132,59" />
+                    Point1="-148.605504587156,49.3333333333333"
+                    Point2="-148.605504587156,53.3333333333333"
+                    Point3="-152.605504587156,53.3333333333333" />
                   <mssgle:LineSegment
-                    End="-248.5,59" />
+                    End="-249.611111111111,53.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8915,30 +9081,30 @@ where [refTable].[manufacture_year] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="447,403.666666666667">
+          TopLeft="445.888888888889,403.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="123,38.3333333333333"
+              EndConnector="124.111111111111,38.3333333333333"
               Start="0,0"
-              End="115.5,38.3333333333333">
+              End="116.611111111111,38.3333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="47.9082568807339,0" />
+                    End="48.3771661569826,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="47.9082568807339,0"
-                    Point2="51.9082568807339,0"
-                    Point3="51.9082568807339,4" />
+                    Point1="48.3771661569826,0"
+                    Point2="52.3771661569826,0"
+                    Point3="52.3771661569826,4" />
                   <mssgle:LineSegment
-                    End="51.9082568807339,34.3333333333333" />
+                    End="52.3771661569826,34.3333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="51.9082568807339,34.3333333333333"
-                    Point2="51.9082568807339,38.3333333333333"
-                    Point3="55.9082568807339,38.3333333333333" />
+                    Point1="52.3771661569826,34.3333333333333"
+                    Point2="52.3771661569826,38.3333333333333"
+                    Point3="56.3771661569826,38.3333333333333" />
                   <mssgle:LineSegment
-                    End="115.5,38.3333333333333" />
+                    End="116.611111111111,38.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8947,74 +9113,134 @@ where [refTable].[manufacture_year] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="202,42"
-          Id="Package\CREATE FOREIGN KEY"
-          TopLeft="776,530" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="655,463">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="222,67"
-              Start="0,0"
-              End="222,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="4,33.5" />
-                  <mssgle:LineSegment
-                    End="218,33.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="218,33.5"
-                    Point2="222,33.5"
-                    Point3="222,37.5" />
-                  <mssgle:LineSegment
-                    End="222,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\RESET DATABASE"
-          TopLeft="55,57" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
+          Id="Package.PrecedenceConstraints[Constraint 9]"
           TopLeft="143.5,99">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="167,67"
+              EndConnector="160.888888888889,50.2222222222223"
               Start="0,0"
-              End="167,59.5">
+              End="160.888888888889,42.7222222222223">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="0,21.1111111111111" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="4,33.5" />
+                    Point1="0,21.1111111111111"
+                    Point2="0,25.1111111111111"
+                    Point3="4,25.1111111111111" />
                   <mssgle:LineSegment
-                    End="163,33.5" />
+                    End="156.888888888889,25.1111111111111" />
                   <mssgle:CubicBezierSegment
-                    Point1="163,33.5"
-                    Point2="167,33.5"
-                    Point3="167,37.5" />
+                    Point1="156.888888888889,25.1111111111111"
+                    Point2="160.888888888889,25.1111111111111"
+                    Point3="160.888888888889,29.1111111111111" />
                   <mssgle:LineSegment
-                    End="167,59.5" />
+                    End="160.888888888889,42.7222222222223" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="283.222222222222,191.222222222222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.4444444444446,77.7777777777777"
+              Start="0,0"
+              End="18.4444444444446,70.2777777777777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.8393144564195" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.8393144564195"
+                    Point2="0,38.8393144564195"
+                    Point3="4,38.8393144564195" />
+                  <mssgle:LineSegment
+                    End="14.4444444444446,38.8393144564195" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.4444444444446,38.8393144564195"
+                    Point2="18.4444444444446,38.8393144564195"
+                    Point3="18.4444444444446,42.8393144564195" />
+                  <mssgle:LineSegment
+                    End="18.4444444444446,70.2777777777777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="340.333333333333,269">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.555555555556,-64.3333333333334"
+              Start="0,0"
+              End="123.555555555556,-56.8333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-28.1971563981043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-28.1971563981043"
+                    Point2="0,-32.1971563981043"
+                    Point3="4,-32.1971563981043" />
+                  <mssgle:LineSegment
+                    End="119.555555555556,-32.1971563981043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="119.555555555556,-32.1971563981043"
+                    Point2="123.555555555556,-32.1971563981043"
+                    Point3="123.555555555556,-36.1971563981043" />
+                  <mssgle:LineSegment
+                    End="123.555555555556,-56.8333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="505.222222222222,204.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.7777777777777,73.3333333333334"
+              Start="0,0"
+              End="29.7777777777777,65.8333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.6364954351319" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.6364954351319"
+                    Point2="0,36.6364954351319"
+                    Point3="4,36.6364954351319" />
+                  <mssgle:LineSegment
+                    End="25.7777777777777,36.6364954351319" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.7777777777777,36.6364954351319"
+                    Point2="29.7777777777777,36.6364954351319"
+                    Point3="29.7777777777777,40.6364954351319" />
+                  <mssgle:LineSegment
+                    End="29.7777777777777,65.8333333333334" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9027,317 +9253,342 @@ where [refTable].[manufacture_year] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\DIM_Model">
+    design-time-name="Package\FACT_Car_Listing">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\FACT_Car_Listing\MILEAGE_BUCKET"
+          TopLeft="779,175" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\FACT_Car_Listing\AGE_BUCKET"
+          TopLeft="685,95" />
+        <NodeLayout
+          Size="109,42"
+          Id="Package\FACT_Car_Listing\YEAR"
+          TopLeft="458,95" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\FACT_Car_Listing\ENGINE"
+          TopLeft="538,173" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\FACT_Car_Listing\FUEL"
+          TopLeft="254,85" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\FACT_Car_Listing\MODEL"
+          TopLeft="355,174" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\FACT_Car_Listing\BRAND"
+          TopLeft="114,168" />
         <NodeLayout
           Size="156,42"
-          Id="Package\DIM_Model\Flat File Source"
-          TopLeft="165,167" />
-        <NodeLayout
-          Size="99,42"
-          Id="Package\DIM_Model\Sort"
-          TopLeft="423,245" />
+          Id="Package\FACT_Car_Listing\Flat File Source"
+          TopLeft="30,86" />
         <NodeLayout
           Size="177,42"
-          Id="Package\DIM_Model\OLE DB Destination"
-          TopLeft="656,315" />
+          Id="Package\FACT_Car_Listing\OLE DB Destination"
+          TopLeft="860,264" />
         <EdgeLayout
-          Id="Package\DIM_Model.Paths[Flat File Source Output]"
-          TopLeft="243,209">
+          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output6]"
+          TopLeft="432.333333333333,174">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="229.5,36"
+              EndConnector="63.3333333333334,-37"
               Start="0,0"
-              End="229.5,28.5">
+              End="63.3333333333334,-29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14" />
+                    End="0,-14.4749924902373" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14"
-                    Point2="0,18"
-                    Point3="4,18" />
+                    Point1="0,-14.4749924902373"
+                    Point2="0,-18.4749924902373"
+                    Point3="4,-18.4749924902373" />
                   <mssgle:LineSegment
-                    End="225.5,18" />
+                    End="59.3333333333334,-18.4749924902373" />
                   <mssgle:CubicBezierSegment
-                    Point1="225.5,18"
-                    Point2="229.5,18"
-                    Point3="229.5,22" />
+                    Point1="59.3333333333334,-18.4749924902373"
+                    Point2="63.3333333333334,-18.4749924902373"
+                    Point3="63.3333333333334,-22.4749924902373" />
                   <mssgle:LineSegment
-                    End="229.5,28.5" />
+                    End="63.3333333333334,-29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-16.5247200520833,-13.4749924902373,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DIM_Model.Paths[Sort Output]"
-          TopLeft="472.5,287">
+          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output5]"
+          TopLeft="324,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="272,28"
+              EndConnector="90,47"
               Start="0,0"
-              End="272,20.5">
+              End="90,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10" />
+                    End="0,15.2154696132597" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="4,14" />
+                    Point1="0,15.2154696132597"
+                    Point2="0,19.2154696132597"
+                    Point3="4,19.2154696132597" />
                   <mssgle:LineSegment
-                    End="268,14" />
+                    End="86,19.2154696132597" />
                   <mssgle:CubicBezierSegment
-                    Point1="268,14"
-                    Point2="272,14"
-                    Point3="272,18" />
+                    Point1="86,19.2154696132597"
+                    Point2="90,19.2154696132597"
+                    Point3="90,23.2154696132597" />
                   <mssgle:LineSegment
-                    End="272,20.5" />
+                    End="90,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-3.19138671875,24.2154696132597,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output4]"
+          TopLeft="191.333333333333,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.166666666667,-41"
+              Start="0,0"
+              End="116.166666666667,-33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-12.7290969899666" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-12.7290969899666"
+                    Point2="0,-16.7290969899666"
+                    Point3="4,-16.7290969899666" />
+                  <mssgle:LineSegment
+                    End="112.166666666667,-16.7290969899666" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.166666666667,-16.7290969899666"
+                    Point2="116.166666666667,-16.7290969899666"
+                    Point3="116.166666666667,-20.7290969899666" />
+                  <mssgle:LineSegment
+                    End="116.166666666667,-33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="9.89194661458334,-11.7290969899666,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT_Car_Listing.Paths[Flat File Source Output]"
+          TopLeft="108,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65,40"
+              Start="0,0"
+              End="65,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="4,20" />
+                  <mssgle:LineSegment
+                    End="61,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61,20"
+                    Point2="65,20"
+                    Point3="65,24" />
+                  <mssgle:LineSegment
+                    End="65,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output3]"
+          TopLeft="868.5,217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80,47"
+              Start="0,0"
+              End="80,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="76,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76,23.5"
+                    Point2="80,23.5"
+                    Point3="80,27.5" />
+                  <mssgle:LineSegment
+                    End="80,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8.19138671875,28.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output2]"
+          TopLeft="785.666666666667,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82.8333333333334,38"
+              Start="0,0"
+              End="82.8333333333334,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.4359637774903" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.4359637774903"
+                    Point2="0,15.4359637774903"
+                    Point3="4,15.4359637774903" />
+                  <mssgle:LineSegment
+                    End="78.8333333333334,15.4359637774903" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78.8333333333334,15.4359637774903"
+                    Point2="82.8333333333334,15.4359637774903"
+                    Point3="82.8333333333334,19.4359637774903" />
+                  <mssgle:LineSegment
+                    End="82.8333333333334,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.7747200520833,20.4359637774903,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output1]"
+          TopLeft="617.333333333333,173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144.166666666667,-36"
+              Start="0,0"
+              End="144.166666666667,-28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-10.6818923327896" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-10.6818923327896"
+                    Point2="0,-14.6818923327896"
+                    Point3="4,-14.6818923327896" />
+                  <mssgle:LineSegment
+                    End="140.166666666667,-14.6818923327896" />
+                  <mssgle:CubicBezierSegment
+                    Point1="140.166666666667,-14.6818923327896"
+                    Point2="144.166666666667,-14.6818923327896"
+                    Point3="144.166666666667,-18.6818923327896" />
+                  <mssgle:LineSegment
+                    End="144.166666666667,-28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="23.8919466145835,-9.6818923327896,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output]"
+          TopLeft="529.333333333333,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69.1666666666666,36"
+              Start="0,0"
+              End="69.1666666666666,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.7124773960217" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.7124773960217"
+                    Point2="0,14.7124773960217"
+                    Point3="4,14.7124773960217" />
+                  <mssgle:LineSegment
+                    End="65.1666666666666,14.7124773960217" />
+                  <mssgle:CubicBezierSegment
+                    Point1="65.1666666666666,14.7124773960217"
+                    Point2="69.1666666666666,14.7124773960217"
+                    Point3="69.1666666666666,18.7124773960217" />
+                  <mssgle:LineSegment
+                    End="69.1666666666666,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-13.6080533854167,19.7124773960217,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DIM_Model\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DIM_Fuel">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="156,42"
-          Id="Package\DIM_Fuel\Flat File Source"
-          TopLeft="192,159" />
-        <NodeLayout
-          Size="99,42"
-          Id="Package\DIM_Fuel\Sort"
-          TopLeft="433,240" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DIM_Fuel\OLE DB Destination"
-          TopLeft="707,318" />
-        <EdgeLayout
-          Id="Package\DIM_Fuel.Paths[Flat File Source Output]"
-          TopLeft="270,201">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="212.5,39"
-              Start="0,0"
-              End="212.5,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="4,19.5" />
-                  <mssgle:LineSegment
-                    End="208.5,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="208.5,19.5"
-                    Point2="212.5,19.5"
-                    Point3="212.5,23.5" />
-                  <mssgle:LineSegment
-                    End="212.5,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIM_Fuel.Paths[Sort Output]"
-          TopLeft="482.5,282">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="313,36"
-              Start="0,0"
-              End="313,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14"
-                    Point2="0,18"
-                    Point3="4,18" />
-                  <mssgle:LineSegment
-                    End="309,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="309,18"
-                    Point2="313,18"
-                    Point3="313,22" />
-                  <mssgle:LineSegment
-                    End="313,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DIM_Fuel\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DIM_Brand">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="156,42"
-          Id="Package\DIM_Brand\Flat File Source"
-          TopLeft="188,116" />
-        <NodeLayout
-          Size="99,42"
-          Id="Package\DIM_Brand\Sort"
-          TopLeft="450,232" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DIM_Brand\OLE DB Destination"
-          TopLeft="717,350" />
-        <EdgeLayout
-          Id="Package\DIM_Brand.Paths[Flat File Source Output]"
-          TopLeft="266,158">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="233.5,74"
-              Start="0,0"
-              End="233.5,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33"
-                    Point2="0,37"
-                    Point3="4,37" />
-                  <mssgle:LineSegment
-                    End="229.5,37" />
-                  <mssgle:CubicBezierSegment
-                    Point1="229.5,37"
-                    Point2="233.5,37"
-                    Point3="233.5,41" />
-                  <mssgle:LineSegment
-                    End="233.5,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIM_Brand.Paths[Sort Output]"
-          TopLeft="499.5,274">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="306,76"
-              Start="0,0"
-              End="306,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
-                  <mssgle:LineSegment
-                    End="302,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="302,38"
-                    Point2="306,38"
-                    Point3="306,42" />
-                  <mssgle:LineSegment
-                    End="306,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DIM_Brand\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\DIM_Year">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="156,42"
-          Id="Package\DIM_Year\Flat File Source"
-          TopLeft="161,144" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="99,42"
           Id="Package\DIM_Year\Sort"
@@ -9346,40 +9597,10 @@ where [refTable].[manufacture_year] = ?</property>
           Size="177,42"
           Id="Package\DIM_Year\OLE DB Destination"
           TopLeft="720,354" />
-        <EdgeLayout
-          Id="Package\DIM_Year.Paths[Flat File Source Output]"
-          TopLeft="239,186">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="249.5,79"
-              Start="0,0"
-              End="249.5,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.5"
-                    Point2="0,39.5"
-                    Point3="4,39.5" />
-                  <mssgle:LineSegment
-                    End="245.5,39.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="245.5,39.5"
-                    Point2="249.5,39.5"
-                    Point3="249.5,43.5" />
-                  <mssgle:LineSegment
-                    End="249.5,71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIM_Year\Flat File Source"
+          TopLeft="161,144" />
         <EdgeLayout
           Id="Package\DIM_Year.Paths[Sort Output]"
           TopLeft="488.5,307">
@@ -9411,34 +9632,371 @@ where [refTable].[manufacture_year] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM_Year.Paths[Flat File Source Output]"
+          TopLeft="239,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="249.5,79"
+              Start="0,0"
+              End="249.5,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5"
+                    Point2="0,39.5"
+                    Point3="4,39.5" />
+                  <mssgle:LineSegment
+                    End="245.5,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="245.5,39.5"
+                    Point2="249.5,39.5"
+                    Point3="249.5,43.5" />
+                  <mssgle:LineSegment
+                    End="249.5,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DIM_Year\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DIM_Model">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="113,42"
+          Id="Package\DIM_Model\BRAND"
+          TopLeft="604,234" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\DIM_Model\Sort"
+          TopLeft="423,245" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DIM_Model\OLE DB Destination"
+          TopLeft="656,315" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIM_Model\Flat File Source"
+          TopLeft="165,167" />
+        <EdgeLayout
+          Id="Package\DIM_Model.Paths[Flat File Source Output]"
+          TopLeft="243,209">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="229.5,36"
+              Start="0,0"
+              End="229.5,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="225.5,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="225.5,18"
+                    Point2="229.5,18"
+                    Point3="229.5,22" />
+                  <mssgle:LineSegment
+                    End="229.5,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM_Model.Paths[Sort Output]"
+          TopLeft="522,266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82,-11"
+              Start="0,0"
+              End="74.5,-11">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37,0"
+                    Point2="41,0"
+                    Point3="41,-4" />
+                  <mssgle:LineSegment
+                    End="41,-7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41,-7"
+                    Point2="41,-11"
+                    Point3="45,-11" />
+                  <mssgle:LineSegment
+                    End="74.5,-11" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM_Model.Paths[Lookup Match Output]"
+          TopLeft="660.5,276">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84,39"
+              Start="0,0"
+              End="84,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="80,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="80,19.5"
+                    Point2="84,19.5"
+                    Point3="84,23.5" />
+                  <mssgle:LineSegment
+                    End="84,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.19138671875,24.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DIM_Mileage_Bucket">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DIM_Mileage_Bucket\OLE DB Destination"
+          TopLeft="728,334" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIM_Mileage_Bucket\Flat File Source"
+          TopLeft="87,150" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\DIM_Mileage_Bucket\Sort"
+          TopLeft="456,255" />
+        <EdgeLayout
+          Id="Package\DIM_Mileage_Bucket.Paths[Sort Output]"
+          TopLeft="505.5,297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="311,37"
+              Start="0,0"
+              End="311,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="307,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="307,18.5"
+                    Point2="311,18.5"
+                    Point3="311,22.5" />
+                  <mssgle:LineSegment
+                    End="311,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM_Mileage_Bucket.Paths[Flat File Source Output]"
+          TopLeft="165,192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="340.5,63"
+              Start="0,0"
+              End="340.5,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="4,31.5" />
+                  <mssgle:LineSegment
+                    End="336.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="336.5,31.5"
+                    Point2="340.5,31.5"
+                    Point3="340.5,35.5" />
+                  <mssgle:LineSegment
+                    End="340.5,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DIM_Fuel">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="99,42"
+          Id="Package\DIM_Fuel\Sort"
+          TopLeft="433,240" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DIM_Fuel\OLE DB Destination"
+          TopLeft="707,318" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIM_Fuel\Flat File Source"
+          TopLeft="192,159" />
+        <EdgeLayout
+          Id="Package\DIM_Fuel.Paths[Sort Output]"
+          TopLeft="482.5,282">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="313,36"
+              Start="0,0"
+              End="313,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="309,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="309,18"
+                    Point2="313,18"
+                    Point3="313,22" />
+                  <mssgle:LineSegment
+                    End="313,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM_Fuel.Paths[Flat File Source Output]"
+          TopLeft="270,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.5,39"
+              Start="0,0"
+              End="212.5,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="208.5,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.5,19.5"
+                    Point2="212.5,19.5"
+                    Point3="212.5,23.5" />
+                  <mssgle:LineSegment
+                    End="212.5,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\DIM_Engine">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="156,42"
-          Id="Package\DIM_Engine\Flat File Source"
-          TopLeft="167,145" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="99,42"
           Id="Package\DIM_Engine\Sort"
@@ -9447,40 +10005,10 @@ where [refTable].[manufacture_year] = ?</property>
           Size="177,42"
           Id="Package\DIM_Engine\OLE DB Destination"
           TopLeft="649,344" />
-        <EdgeLayout
-          Id="Package\DIM_Engine.Paths[Flat File Source Output]"
-          TopLeft="245,187">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="226.5,68"
-              Start="0,0"
-              End="226.5,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
-                  <mssgle:LineSegment
-                    End="222.5,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="222.5,34"
-                    Point2="226.5,34"
-                    Point3="226.5,38" />
-                  <mssgle:LineSegment
-                    End="226.5,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIM_Engine\Flat File Source"
+          TopLeft="167,145" />
         <EdgeLayout
           Id="Package\DIM_Engine.Paths[Sort Output]"
           TopLeft="471.5,297">
@@ -9512,38 +10040,155 @@ where [refTable].[manufacture_year] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM_Engine.Paths[Flat File Source Output]"
+          TopLeft="245,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="226.5,68"
+              Start="0,0"
+              End="226.5,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="222.5,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="222.5,34"
+                    Point2="226.5,34"
+                    Point3="226.5,38" />
+                  <mssgle:LineSegment
+                    End="226.5,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DIM_Engine\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DIM_Brand">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="99,42"
+          Id="Package\DIM_Brand\Sort"
+          TopLeft="450,232" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DIM_Brand\OLE DB Destination"
+          TopLeft="717,350" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIM_Brand\Flat File Source"
+          TopLeft="188,116" />
+        <EdgeLayout
+          Id="Package\DIM_Brand.Paths[Sort Output]"
+          TopLeft="499.5,274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="306,76"
+              Start="0,0"
+              End="306,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
+                  <mssgle:LineSegment
+                    End="302,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="302,38"
+                    Point2="306,38"
+                    Point3="306,42" />
+                  <mssgle:LineSegment
+                    End="306,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM_Brand.Paths[Flat File Source Output]"
+          TopLeft="266,158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="233.5,74"
+              Start="0,0"
+              End="233.5,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="4,37" />
+                  <mssgle:LineSegment
+                    End="229.5,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="229.5,37"
+                    Point2="233.5,37"
+                    Point3="233.5,41" />
+                  <mssgle:LineSegment
+                    End="233.5,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\DIM_Age_Bucket">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="156,42"
-          Id="Package\DIM_Age_Bucket\Flat File Source"
-          TopLeft="220,160" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\DIM_Age_Bucket\OLE DB Destination"
           TopLeft="805,353" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIM_Age_Bucket\Flat File Source"
+          TopLeft="220,160" />
         <NodeLayout
           Size="99,42"
           Id="Package\DIM_Age_Bucket\Sort"
@@ -9579,7 +10224,9 @@ where [refTable].[manufacture_year] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9613,629 +10260,13 @@ where [refTable].[manufacture_year] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DIM_Age_Bucket\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DIM_Mileage_Bucket">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="156,42"
-          Id="Package\DIM_Mileage_Bucket\Flat File Source"
-          TopLeft="87,150" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DIM_Mileage_Bucket\OLE DB Destination"
-          TopLeft="728,334" />
-        <NodeLayout
-          Size="99,42"
-          Id="Package\DIM_Mileage_Bucket\Sort"
-          TopLeft="456,255" />
-        <EdgeLayout
-          Id="Package\DIM_Mileage_Bucket.Paths[Flat File Source Output]"
-          TopLeft="165,192">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="340.5,63"
-              Start="0,0"
-              End="340.5,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.5"
-                    Point2="0,31.5"
-                    Point3="4,31.5" />
-                  <mssgle:LineSegment
-                    End="336.5,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="336.5,31.5"
-                    Point2="340.5,31.5"
-                    Point3="340.5,35.5" />
-                  <mssgle:LineSegment
-                    End="340.5,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DIM_Mileage_Bucket.Paths[Sort Output]"
-          TopLeft="505.5,297">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="311,37"
-              Start="0,0"
-              End="311,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
-                  <mssgle:LineSegment
-                    End="307,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="307,18.5"
-                    Point2="311,18.5"
-                    Point3="311,22.5" />
-                  <mssgle:LineSegment
-                    End="311,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DIM_Mileage_Bucket\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\FACT_Car_Listing">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="156,42"
-          Id="Package\FACT_Car_Listing\Flat File Source"
-          TopLeft="31,86" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\FACT_Car_Listing\OLE DB Destination"
-          TopLeft="860,264" />
-        <NodeLayout
-          Size="118,42"
-          Id="Package\FACT_Car_Listing\BRAND"
-          TopLeft="310,173" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\FACT_Car_Listing\FUEL"
-          TopLeft="254,85" />
-        <NodeLayout
-          Size="118,42"
-          Id="Package\FACT_Car_Listing\MODEL"
-          TopLeft="134,171" />
-        <EdgeLayout
-          Id="Package\FACT_Car_Listing.Paths[Flat File Source Output]"
-          TopLeft="109,128">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="84,43"
-              Start="0,0"
-              End="84,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="4,21.5" />
-                  <mssgle:LineSegment
-                    End="80,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="80,21.5"
-                    Point2="84,21.5"
-                    Point3="84,25.5" />
-                  <mssgle:LineSegment
-                    End="84,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output]"
-          TopLeft="211.333333333333,171">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="79.6666666666667,-44"
-              Start="0,0"
-              End="79.6666666666667,-36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-17.9629856225145" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-17.9629856225145"
-                    Point2="0,-21.9629856225145"
-                    Point3="4,-21.9629856225145" />
-                  <mssgle:LineSegment
-                    End="75.6666666666667,-21.9629856225145" />
-                  <mssgle:CubicBezierSegment
-                    Point1="75.6666666666667,-21.9629856225145"
-                    Point2="79.6666666666667,-21.9629856225145"
-                    Point3="79.6666666666667,-25.9629856225145" />
-                  <mssgle:LineSegment
-                    End="79.6666666666667,-36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8.35805338541666,-16.9629856225145,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output1]"
-          TopLeft="324,127">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="45,46"
-              Start="0,0"
-              End="45,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.8066298342541" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.8066298342541"
-                    Point2="0,18.8066298342541"
-                    Point3="4,18.8066298342541" />
-                  <mssgle:LineSegment
-                    End="41,18.8066298342541" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41,18.8066298342541"
-                    Point2="45,18.8066298342541"
-                    Point3="45,22.8066298342541" />
-                  <mssgle:LineSegment
-                    End="45,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.69138671875,23.8066298342541,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="109,42"
-          Id="Package\FACT_Car_Listing\YEAR"
-          TopLeft="458,95" />
-        <EdgeLayout
-          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output2]"
-          TopLeft="387.333333333333,173">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.166666666667,-36"
-              Start="0,0"
-              End="125.166666666667,-28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-10.6889632107023" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-10.6889632107023"
-                    Point2="0,-14.6889632107023"
-                    Point3="4,-14.6889632107023" />
-                  <mssgle:LineSegment
-                    End="121.166666666667,-14.6889632107023" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.166666666667,-14.6889632107023"
-                    Point2="125.166666666667,-14.6889632107023"
-                    Point3="125.166666666667,-18.6889632107023" />
-                  <mssgle:LineSegment
-                    End="125.166666666667,-28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="14.3919466145833,-9.68896321070235,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\FACT_Car_Listing\ENGINE"
-          TopLeft="538,173" />
-        <EdgeLayout
-          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output3]"
-          TopLeft="529.333333333333,137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="69.1666666666666,36"
-              Start="0,0"
-              End="69.1666666666666,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.7124773960217" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.7124773960217"
-                    Point2="0,14.7124773960217"
-                    Point3="4,14.7124773960217" />
-                  <mssgle:LineSegment
-                    End="65.1666666666666,14.7124773960217" />
-                  <mssgle:CubicBezierSegment
-                    Point1="65.1666666666666,14.7124773960217"
-                    Point2="69.1666666666666,14.7124773960217"
-                    Point3="69.1666666666666,18.7124773960217" />
-                  <mssgle:LineSegment
-                    End="69.1666666666666,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-13.6080533854167,19.7124773960217,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="153,42"
-          Id="Package\FACT_Car_Listing\AGE_BUCKET"
-          TopLeft="685,95" />
-        <EdgeLayout
-          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output4]"
-          TopLeft="617.333333333333,173">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="144.166666666667,-36"
-              Start="0,0"
-              End="144.166666666667,-28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-10.6818923327896" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-10.6818923327896"
-                    Point2="0,-14.6818923327896"
-                    Point3="4,-14.6818923327896" />
-                  <mssgle:LineSegment
-                    End="140.166666666667,-14.6818923327896" />
-                  <mssgle:CubicBezierSegment
-                    Point1="140.166666666667,-14.6818923327896"
-                    Point2="144.166666666667,-14.6818923327896"
-                    Point3="144.166666666667,-18.6818923327896" />
-                  <mssgle:LineSegment
-                    End="144.166666666667,-28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="23.8919466145833,-9.68189233278955,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="179,42"
-          Id="Package\FACT_Car_Listing\MILEAGE_BUCKET"
-          TopLeft="779,175" />
-        <EdgeLayout
-          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output5]"
-          TopLeft="785.666666666667,137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="82.8333333333334,38"
-              Start="0,0"
-              End="82.8333333333334,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.4359637774903" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.4359637774903"
-                    Point2="0,15.4359637774903"
-                    Point3="4,15.4359637774903" />
-                  <mssgle:LineSegment
-                    End="78.8333333333334,15.4359637774903" />
-                  <mssgle:CubicBezierSegment
-                    Point1="78.8333333333334,15.4359637774903"
-                    Point2="82.8333333333334,15.4359637774903"
-                    Point3="82.8333333333334,19.4359637774903" />
-                  <mssgle:LineSegment
-                    End="82.8333333333334,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-6.77472005208332,20.4359637774903,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FACT_Car_Listing.Paths[Lookup Match Output6]"
-          TopLeft="868.5,217">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="80,47"
-              Start="0,0"
-              End="80,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="4,23.5" />
-                  <mssgle:LineSegment
-                    End="76,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="76,23.5"
-                    Point2="80,23.5"
-                    Point3="80,27.5" />
-                  <mssgle:LineSegment
-                    End="80,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8.19138671875,28.5,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\FACT_Car_Listing\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FACT_Car_Listing\BRAND">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DIM_BRAND]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FACT_Car_Listing\FUEL">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DIM_FUEL]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FACT_Car_Listing\MODEL">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DIM_MODEL]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FACT_Car_Listing\YEAR">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DIM_YEAR]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FACT_Car_Listing\ENGINE">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DIM_ENGINE]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FACT_Car_Listing\AGE_BUCKET">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DIM_AGE_BUCKET]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FACT_Car_Listing\MILEAGE_BUCKET">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DIM_MILEAGE_BUCKET]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
