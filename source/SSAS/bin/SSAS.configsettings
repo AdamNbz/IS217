@@ -15,13 +15,13 @@
         <ID>DIM AGE BUCKET</ID>
       </Dimension>
       <Dimension>
-        <ID>DIM YEAR</ID>
-      </Dimension>
-      <Dimension>
         <ID>DIM BRAND</ID>
       </Dimension>
       <Dimension>
         <ID>DIM ENGINE</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM FUEL</ID>
       </Dimension>
       <Dimension>
         <ID>DIM MILEAGE BUCKET</ID>
@@ -30,7 +30,10 @@
         <ID>DIM MODEL</ID>
       </Dimension>
       <Dimension>
-        <ID>DIM FUEL</ID>
+        <ID>DIM YEAR</ID>
+      </Dimension>
+      <Dimension>
+        <ID>FACT CAR LISTING</ID>
       </Dimension>
     </Dimensions>
     <Cubes>

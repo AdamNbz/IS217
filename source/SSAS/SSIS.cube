@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="9dc594e4-9816-47ba-bf79-0f7fa747d75a" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="923dda27-e7af-41dc-b1c1-e4374380a420" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>SSIS</ID>
   <Name>SSIS</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="17" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-9235" scrolltop="56" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="77" x="20373" y="13811" backcolor="3948098" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="17" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6781" scrolltop="-2090" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="90" x="18944" y="17039" backcolor="3948098" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
             </font>
@@ -41,7 +41,7 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DIM_FUEL" left="5759" top="0" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DIM_FUEL" left="20" top="5839" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
             </control>
@@ -85,7 +85,7 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DIM_ENGINE" left="20" top="5839" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DIM_ENGINE" left="5759" top="0" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
             </control>
@@ -165,7 +165,7 @@
               <point x="6159" y="9279" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6860" top="1380" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="2720" top="6379" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="12303291" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -178,9 +178,11 @@
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
             </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="6" sourceattachpoint="5" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="7259" y="1879" />
-              <point x="7259" y="4279" />
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="6" sourceattachpoint="13" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3020" y="6778" />
+              <point x="4220" y="6778" />
+              <point x="4220" y="6779" />
+              <point x="5420" y="6779" />
             </connector>
           </ddscontrol>
           <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="8798" top="1254" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="3000" height="4175" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
@@ -243,7 +245,7 @@
               <point x="7809" y="9279" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="2720" top="6379" logicalid="16" controlid="16" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6860" top="1380" logicalid="16" controlid="16" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="12303291" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -256,11 +258,9 @@
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
             </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="6" sourceattachpoint="13" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="3020" y="6778" />
-              <point x="4220" y="6778" />
-              <point x="4220" y="6779" />
-              <point x="5420" y="6779" />
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="6" sourceattachpoint="5" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7259" y="1879" />
+              <point x="7259" y="4279" />
             </connector>
           </ddscontrol>
         </dds>
@@ -280,11 +280,11 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>-9235</Value>
+      <Value>-6781</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>56</Value>
+      <Value>-2090</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -296,103 +296,163 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
-      <Value>77</Value>
+      <Value>90</Value>
     </Annotation>
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
+  <Source dwd:design-time-name="4f95ba4c-bedb-4889-8e18-049ec412d0e4">
+    <DataSourceViewID>SSIS</DataSourceViewID>
+  </Source>
   <Dimensions>
-    <Dimension dwd:design-time-name="9baa26ac-5fc2-4cc6-a789-bc8712862088">
-      <ID>DIM AGE BUCKET</ID>
-      <Name>DIM AGE BUCKET</Name>
-      <DimensionID>DIM AGE BUCKET</DimensionID>
+    <Dimension dwd:design-time-name="7eb4169b-1d79-4f29-b676-ea59fcb6c986">
+      <ID>FACT CAR LISTING</ID>
+      <Name>FACT CAR LISTING</Name>
+      <DimensionID>FACT CAR LISTING</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="66cac651-d030-4798-bcf9-4aa76c36cbcc">
+        <Attribute dwd:design-time-name="9f0d6c51-b27f-48db-91f5-b3004bfebd62">
+          <AttributeID>Listing Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="68fdea19-c75e-4133-b286-63bfeb7cded9">
           <AttributeID>Age Bucket Id</AttributeID>
         </Attribute>
-      </Attributes>
-    </Dimension>
-    <Dimension dwd:design-time-name="ce2130c9-7418-4b15-90bd-ece3c8483208">
-      <ID>DIM YEAR</ID>
-      <Name>DIM YEAR</Name>
-      <DimensionID>DIM YEAR</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="549afa61-c1ec-426f-a663-a002a8349fea">
+        <Attribute dwd:design-time-name="14349ea5-7f18-403e-9bdf-4be757603a08">
           <AttributeID>Year Id</AttributeID>
         </Attribute>
-      </Attributes>
-    </Dimension>
-    <Dimension dwd:design-time-name="9e985442-584d-43f6-9177-f301aebb2247">
-      <ID>DIM BRAND</ID>
-      <Name>DIM BRAND</Name>
-      <DimensionID>DIM BRAND</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="f0ae4d3a-024d-4742-8581-00ee87b3c464">
+        <Attribute dwd:design-time-name="e521a4c6-c13d-40da-aa67-09f9b08a66b4">
           <AttributeID>Brand Id</AttributeID>
         </Attribute>
-      </Attributes>
-    </Dimension>
-    <Dimension dwd:design-time-name="d28ced6f-5fff-41a4-bcc5-897e5ffa243b">
-      <ID>DIM ENGINE</ID>
-      <Name>DIM ENGINE</Name>
-      <DimensionID>DIM ENGINE</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="db5e75d8-5f28-41bc-8eb2-4aa9f3b75f87">
+        <Attribute dwd:design-time-name="311cd166-c188-43c5-8fbd-f80f7fa09b05">
           <AttributeID>Engine Id</AttributeID>
         </Attribute>
-      </Attributes>
-    </Dimension>
-    <Dimension dwd:design-time-name="cf110859-eaba-47c1-bac3-6d8ebb8768fd">
-      <ID>DIM MILEAGE BUCKET</ID>
-      <Name>DIM MILEAGE BUCKET</Name>
-      <DimensionID>DIM MILEAGE BUCKET</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="79871b12-bef1-4d92-9cc1-b105f8f50343">
+        <Attribute dwd:design-time-name="025eab21-6671-4b5f-916b-e1e0897ee56b">
           <AttributeID>Mileage Bucket Id</AttributeID>
         </Attribute>
-      </Attributes>
-    </Dimension>
-    <Dimension dwd:design-time-name="3a88ae1f-f28d-4b95-b146-c0a694e93982">
-      <ID>DIM MODEL</ID>
-      <Name>DIM MODEL</Name>
-      <DimensionID>DIM MODEL</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="83a0681b-8d41-49e7-9c57-9bbc6c28156e">
+        <Attribute dwd:design-time-name="bf6adc79-d511-4ee8-8d50-83be8266d9d4">
           <AttributeID>Model Id</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="d093238e-3b02-417d-86a5-ddc8cca5d07d">
-          <AttributeID>Brand Id</AttributeID>
-        </Attribute>
-      </Attributes>
-      <Hierarchies>
-        <Hierarchy dwd:design-time-name="198ef69d-658f-4926-988b-73d68df4609b">
-          <HierarchyID>Hierarchy</HierarchyID>
-        </Hierarchy>
-      </Hierarchies>
-    </Dimension>
-    <Dimension dwd:design-time-name="799c65df-1cb4-4426-ab0f-d1c582ac5e7c">
-      <ID>DIM FUEL</ID>
-      <Name>DIM FUEL</Name>
-      <DimensionID>DIM FUEL</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="49f9ebf3-6fc4-4ae9-a982-d5a86ac11c12">
+        <Attribute dwd:design-time-name="6b8f2d78-9ad3-4f13-9aa2-7a531dd75fb7">
           <AttributeID>Fuel Id</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="9b4e2b6c-4183-4b98-9335-8c8d2a642e9c">
-      <ID>DIM MODEL - Brand</ID>
-      <Name>DIM MODEL - Brand</Name>
+    <Dimension dwd:design-time-name="a053f32a-33a0-4bae-8d1e-f51699cb73d4">
+      <ID>DIM AGE BUCKET</ID>
+      <Name>DIM AGE BUCKET</Name>
+      <DimensionID>DIM AGE BUCKET</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="038447c8-53f2-4c42-b1f8-1b9df6df8349">
+          <AttributeID>Age Bucket Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4fd4d07c-7f65-42a2-8df2-4658f0eca06f">
+          <AttributeID>Age Bucket Label</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f02a2f0f-2217-44fa-a8a1-f250adb783d7">
+          <AttributeID>Age Bucket Order</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3be656cd-0c28-454b-9f85-ec922aa298f4">
+          <AttributeID>Min Age</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="467688de-2f6a-48e2-9aa3-5be00142c91f">
+          <AttributeID>Max Age</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="571f25b5-a54b-4444-9c87-db72be089a88">
+      <ID>DIM YEAR</ID>
+      <Name>DIM YEAR</Name>
+      <DimensionID>DIM YEAR</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="9dc66787-4c19-4d7c-acbf-823cf3949558">
+          <AttributeID>Year Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d17ddc3b-11ab-4bca-8bf7-edfa68683f25">
+          <AttributeID>Manufacture Year</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="9c546e63-4921-4d88-a928-d0b38a208e82">
+      <ID>DIM BRAND</ID>
+      <Name>DIM BRAND</Name>
       <DimensionID>DIM BRAND</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="9e7ec211-311d-4dd4-9379-3a33ee1418ca">
+        <Attribute dwd:design-time-name="45d75625-a333-4894-95ab-9ab1482038ea">
           <AttributeID>Brand Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e4f06063-bc54-4c2c-ab40-5c21e3b138ed">
+          <AttributeID>Brand Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="3f5c5429-47b9-47b1-be59-14ca27ffc95a">
+      <ID>DIM ENGINE</ID>
+      <Name>DIM ENGINE</Name>
+      <DimensionID>DIM ENGINE</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="7e344aa4-a1f7-4190-9a86-35af1df3a251">
+          <AttributeID>Engine Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="097dbabe-9ba2-4ab9-a6b9-7d1a3700624e">
+          <AttributeID>Engine Type</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="5863ae13-31ae-4152-b7f8-54e5e765729b">
+      <ID>DIM MILEAGE BUCKET</ID>
+      <Name>DIM MILEAGE BUCKET</Name>
+      <DimensionID>DIM MILEAGE BUCKET</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4ec3efab-ac79-4e22-b4db-2ec90e20e976">
+          <AttributeID>Mileage Bucket Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a48f85ba-6081-4fe4-a63d-5931c8d11040">
+          <AttributeID>Mileage Bucket Label</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cc68fb8d-d659-4a9a-ba28-d6888337de3c">
+          <AttributeID>Mileage Bucket Order</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9ee18440-5784-4b76-abb3-4ff308181ccd">
+          <AttributeID>Min Km</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="61655700-699c-4e45-9b15-474ef6b4f64e">
+          <AttributeID>Max Km</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="4f2b8022-8ba8-41e1-9ca0-6c3756696b21">
+      <ID>DIM MODEL</ID>
+      <Name>DIM MODEL</Name>
+      <DimensionID>DIM MODEL</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="de2d2549-a20a-4cd4-a610-15064c001e9d">
+          <AttributeID>Model Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2654c0dd-6d41-4746-9e87-12480b02bc45">
+          <AttributeID>Brand Id</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="df9b7098-21f8-4e7f-aa00-d8e6e78044bb">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="7a4ba0fd-ad65-4ff6-afaa-8acdb80082bd">
+      <ID>DIM FUEL</ID>
+      <Name>DIM FUEL</Name>
+      <DimensionID>DIM FUEL</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="636f0c80-98f6-4a17-a8e0-c27ee845de73">
+          <AttributeID>Fuel Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e1b7c8a3-6aaf-47d0-aead-6210e6ce3418">
+          <AttributeID>Fuel Type</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="9cc95ccc-b614-4f29-8e0e-e22a2271a93b">
+    <MeasureGroup dwd:design-time-name="aab53053-71c7-4026-8c88-cd144f4eb5e9">
       <ID>FACT CAR LISTING</ID>
       <Name>FACT CAR LISTING</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -400,70 +460,81 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="449b6275-ad78-45ae-81ce-a57dde81eac4">
+        <Measure dwd:design-time-name="7275bfde-de9d-4360-b809-4bf7baf08fa9">
           <ID>Price Usd</ID>
           <Name>Price Usd</Name>
-          <Source dwd:design-time-name="ea2c9e56-5043-4798-9a5a-02415c173bc6">
+          <Source dwd:design-time-name="23f3a632-a4df-4f95-8066-aae91b369ea0">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="92a5619c-ce5c-4010-a0b4-2c23ed96fcbe">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="71016d4c-3614-4eb8-897e-f7fa6df56a10">
               <TableID>dbo_FACT_CAR_LISTING</TableID>
               <ColumnID>price_usd</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="7397cc06-5e68-4848-b6b4-9ded2be53211">
+        <Measure dwd:design-time-name="87b15907-297c-4f21-8ede-012c53b830c9">
           <ID>Mileage Km</ID>
           <Name>Mileage Km</Name>
-          <Source dwd:design-time-name="b16eed8e-4a1e-4b78-aa78-f69904c34c80">
+          <Source dwd:design-time-name="8e1f374f-2b07-4541-b86d-e57e34b0c24f">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="7b04c69a-7990-4568-abac-59478b186ce3">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="cbbc4300-c0b7-4bdc-a79c-ac60e6272fc3">
               <TableID>dbo_FACT_CAR_LISTING</TableID>
               <ColumnID>mileage_km</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="2fef7871-b668-4e7a-9f95-0b1f437ce590">
+        <Measure dwd:design-time-name="593fc526-2b8f-4788-9cdc-12a6858e82c8">
           <ID>Age</ID>
           <Name>Age</Name>
-          <Source dwd:design-time-name="b974be6c-af03-4f4a-b9da-f1cd7e34432f">
+          <Source dwd:design-time-name="1e1e85eb-fa48-477a-b077-fa60cf4d36d9">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="5ddabb45-916b-4e5a-9cc6-c0b130c3e996">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6dd9d1b7-967d-4580-90f1-1206c06f2566">
               <TableID>dbo_FACT_CAR_LISTING</TableID>
               <ColumnID>age</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="399c6553-bb94-4503-864f-439d68456342">
+        <Measure dwd:design-time-name="ae0e5b7f-5a95-437d-8d52-68f08276bf17">
           <ID>Price Per 1k Km</ID>
           <Name>Price Per 1k Km</Name>
-          <Source dwd:design-time-name="d2e7d827-09b2-472d-81e2-b30d3516a1eb">
+          <Source dwd:design-time-name="fad237dd-489a-4d66-b345-60ee8ca55030">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="0c697f27-1b61-4ce0-9957-667acb4b738e">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f390f975-e890-4194-bb89-b1fae0946699">
               <TableID>dbo_FACT_CAR_LISTING</TableID>
               <ColumnID>price_per_1k_km</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="13884120-e436-4faa-af05-de5f78ef4faf">
+        <Measure dwd:design-time-name="e38d4dfa-612a-457d-8279-aa9fcff06145">
           <ID>Overprice Threshold</ID>
           <Name>Overprice Threshold</Name>
-          <Source dwd:design-time-name="66e3095e-9bbf-4b68-9832-c7e0f397e96b">
+          <Source dwd:design-time-name="d08e4a4d-4336-492b-af75-4d9c27c8fa49">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="f84888f6-a9ea-4900-b2a4-aa0bb986d979">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f6ebd11e-edf3-4e71-9840-cab0d50f1512">
               <TableID>dbo_FACT_CAR_LISTING</TableID>
               <ColumnID>overprice_threshold</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="eb348c68-f933-40ec-b055-e1db32117eee">
+        <Measure dwd:design-time-name="6aa83ea3-4575-4c93-a2d5-a104bc0ef16b">
           <ID>FACT CAR LISTING Count</ID>
           <Name>FACT CAR LISTING Count</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="3e877b95-1ea1-49e3-946a-d406301d33ab">
+          <Source dwd:design-time-name="316019e3-92cb-49bb-87d5-bcdee243199f">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="3e8a1400-c12c-42a5-807e-669312e2c373">
+            <Source xsi:type="RowBinding" dwd:design-time-name="a6e8e3b5-6c53-403a-bbd5-88d41bb00375">
               <TableID>dbo_FACT_CAR_LISTING</TableID>
+            </Source>
+          </Source>
+          <AggregateFunction>Count</AggregateFunction>
+        </Measure>
+        <Measure dwd:design-time-name="d938c85f-4ca0-409c-949a-60c6f2c7a110">
+          <ID>Is Overpriced</ID>
+          <Name>Is Overpriced</Name>
+          <Source dwd:design-time-name="e5110700-d475-4348-96c9-3bfd8134e5f5">
+            <DataType>Boolean</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7ae053ff-288b-41f6-9728-dcb1b12ba78e">
+              <TableID>dbo_FACT_CAR_LISTING</TableID>
+              <ColumnID>is_overpriced</ColumnID>
             </Source>
           </Source>
         </Measure>
@@ -471,130 +542,148 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="82e98a6a-52d6-4c7a-a182-c36c1a995966">
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="cf683685-d2d0-4214-a084-fd8edf54cb8e">
+          <CubeDimensionID>FACT CAR LISTING</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="263cdd7f-8d7f-4251-b8d5-b2a0869d8bac">
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="84034b41-28b4-45b3-a36c-2b2e9f9576fe">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="07937a62-b355-4d8e-be49-16986f4d3be3">
+                    <TableID>dbo_FACT_CAR_LISTING</TableID>
+                    <ColumnID>listing_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <AttributeID>Listing Id</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4c1ecae4-c33c-4922-a421-4fe113c21907">
           <CubeDimensionID>DIM AGE BUCKET</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="bcd1c822-8c3a-4b05-a339-83c3a471c3ad">
-              <AttributeID>Age Bucket Id</AttributeID>
+            <Attribute dwd:design-time-name="eefed0df-95cc-42c9-bf95-d273d9539640">
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="7c16eb12-a1f6-4538-ab52-7ca68a5aab1d">
+                <KeyColumn dwd:design-time-name="b3e3ab7f-000a-4354-ba52-0dc1eabe7c50">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cc6419c2-b6f1-499c-af83-8bd5b2ed4e69">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cdeef0e7-dc1e-4971-afb2-2cbd4d8740eb">
                     <TableID>dbo_FACT_CAR_LISTING</TableID>
                     <ColumnID>age_bucket_id</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
+              <AttributeID>Age Bucket Id</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c435ff8e-ae47-40d2-af30-37be22ee8928">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2fbffe38-15a1-433c-bde6-27f9f1c1d311">
           <CubeDimensionID>DIM YEAR</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="0a164aa5-9ef7-45cd-8085-dc5c7f639d39">
-              <AttributeID>Year Id</AttributeID>
+            <Attribute dwd:design-time-name="05f274fc-89c4-4244-a301-5bf200fb35b8">
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="8ef48bad-f157-460a-a41e-0a4d1ebadae4">
+                <KeyColumn dwd:design-time-name="eed5ad9d-f67f-4db9-9632-f033418535ca">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="59ebf143-f511-4154-8048-338d9a616eb6">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="96fc57c2-4ed9-4cbc-8ca4-6ac2f8f2b608">
                     <TableID>dbo_FACT_CAR_LISTING</TableID>
                     <ColumnID>year_id</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
+              <AttributeID>Year Id</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b2c7d764-524f-4361-a9d7-57aaad2bb471">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="06c2d5c7-557a-4c18-a55f-df0cf4ffad8e">
           <CubeDimensionID>DIM BRAND</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="a4d6e30d-8e55-45a3-b07c-ee8bff877c48">
-              <AttributeID>Brand Id</AttributeID>
+            <Attribute dwd:design-time-name="969378ee-291c-4fea-9140-8b1df48100db">
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="cc02ea3c-117b-43e9-a4d1-5f5b714c7ef1">
+                <KeyColumn dwd:design-time-name="973066a6-b2ca-4c02-9a07-a6fe6809dffc">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="db668c84-4f51-43f6-a3cc-b90a6a6e2fb8">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1eb2b6e1-fddf-46da-bc8f-72e1f7eacf05">
                     <TableID>dbo_FACT_CAR_LISTING</TableID>
                     <ColumnID>brand_id</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
+              <AttributeID>Brand Id</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="21c51194-bcea-46de-a1b2-fa701653aae4">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ea345052-f7aa-46a2-b76a-3ba3cec1b90d">
           <CubeDimensionID>DIM ENGINE</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="41d6e7c8-685d-479e-a55f-985fde736cce">
-              <AttributeID>Engine Id</AttributeID>
+            <Attribute dwd:design-time-name="5cf7e04e-d569-4998-9d71-a11e48439013">
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="1ea514a4-32e8-4624-8319-cb94ad0146a4">
+                <KeyColumn dwd:design-time-name="785b5aa0-4ccb-4062-ac76-d31a94ad9d19">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="38c40ad7-669e-4169-bd26-ea675b8a7886">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c285e808-a5a1-4072-a7ab-3ef836a2c46e">
                     <TableID>dbo_FACT_CAR_LISTING</TableID>
                     <ColumnID>engine_id</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
+              <AttributeID>Engine Id</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="52029bcc-3c66-4f5c-853a-83328d4c4a9d">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3d483c0c-b4c4-49bb-b163-5a84361e0399">
           <CubeDimensionID>DIM MILEAGE BUCKET</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="e4e6b6de-b155-4f26-a1f4-bcf267bd9c0a">
-              <AttributeID>Mileage Bucket Id</AttributeID>
+            <Attribute dwd:design-time-name="4fa9c497-5960-468f-9bff-62f40166f857">
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="df4850cb-d790-4635-9181-b4e5331c6452">
+                <KeyColumn dwd:design-time-name="c7836c94-a1d3-45b8-a622-2382beb2e2ad">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e47ec96e-28bc-43c4-aa09-d3ecc4af88e7">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fb343c02-8d01-40e9-a0ee-a9549019df9a">
                     <TableID>dbo_FACT_CAR_LISTING</TableID>
                     <ColumnID>mileage_bucket_id</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
+              <AttributeID>Mileage Bucket Id</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ad16d844-2371-426d-ac75-93305775801c">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3d2ad406-d32e-4a8b-9085-368ce4b31826">
           <CubeDimensionID>DIM MODEL</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="e3edfacf-81b1-4bc6-97ea-bdd5d7fdd679">
-              <AttributeID>Model Id</AttributeID>
+            <Attribute dwd:design-time-name="328395b2-19d7-44c8-83bc-a8dd8bb0aea1">
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="ee9d2033-a8e2-4a19-b890-7c5cab7b0806">
+                <KeyColumn dwd:design-time-name="77be1752-48ff-4c2c-850b-c75809700a02">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="74d9f757-c759-4598-b4b3-dfe1c7612f0f">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="daa1430c-9663-4a81-9c36-45e6fb7312bd">
                     <TableID>dbo_FACT_CAR_LISTING</TableID>
                     <ColumnID>model_id</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
+              <AttributeID>Model Id</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ec1504d1-e28d-461d-b41e-1c92401f29e5">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ea64a672-1af2-4e76-9be8-70eca0ce5388">
           <CubeDimensionID>DIM FUEL</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="b88e2a17-235f-4c0e-88be-dbf07f4d7dd8">
-              <AttributeID>Fuel Id</AttributeID>
+            <Attribute dwd:design-time-name="b2c9cc4f-d1c9-482f-9f41-3e59d8976f79">
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="4db59ea7-d6cc-4f81-a232-ca9f71e37e18">
+                <KeyColumn dwd:design-time-name="0362877b-d506-4bad-a001-d6436527330e">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2a6a81bb-5a11-4ab1-9f8a-8b92f4c2b2fa">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d38c1b28-b982-49ac-8af6-7d9502bee3a1">
                     <TableID>dbo_FACT_CAR_LISTING</TableID>
                     <ColumnID>fuel_id</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
+              <AttributeID>Fuel Id</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
           </Attributes>
@@ -603,11 +692,8 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="28af561f-bb2b-4463-bb78-e99af00d2bfe">
-    <DataSourceViewID>SSIS</DataSourceViewID>
-  </Source>
   <MdxScripts>
-    <MdxScript dwd:design-time-name="d1d9f0ef-b6d1-44ac-aeaf-4ec7fdf231d6">
+    <MdxScript dwd:design-time-name="4d63928f-78be-4c7b-841b-addf7b410389">
       <ID>MdxScript</ID>
       <Name>MdxScript</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -615,7 +701,6 @@
       <Commands>
         <Command>
           <Text>CALCULATE;
-
 /* Trung bình giá */
 CREATE MEMBER CURRENTCUBE.[Measures].[Avg Price] AS
   IIF([Measures].[FACT CAR LISTING Count]=0, NULL,
@@ -640,7 +725,7 @@ CREATE MEMBER CURRENTCUBE.[Measures].[Market Share %] AS
 /* Đếm xe bị chém giá */
 CREATE MEMBER CURRENTCUBE.[Measures].[Overpriced Count] AS
   SUM(EXISTING [FACT CAR LISTING].[Listing Id].Members,
-      IIF([Measures].[Is Overpriced]=1, 1, NULL));</Text>
+      IIF([Measures].[Is Overpriced] = 1, 1, NULL));</Text>
         </Command>
       </Commands>
     </MdxScript>

@@ -24,16 +24,16 @@
       <FullPath>DIM AGE BUCKET.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>DIM YEAR.dim</Name>
-      <FullPath>DIM YEAR.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>DIM BRAND.dim</Name>
       <FullPath>DIM BRAND.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>DIM ENGINE.dim</Name>
       <FullPath>DIM ENGINE.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM FUEL.dim</Name>
+      <FullPath>DIM FUEL.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>DIM MILEAGE BUCKET.dim</Name>
@@ -44,8 +44,12 @@
       <FullPath>DIM MODEL.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>DIM FUEL.dim</Name>
-      <FullPath>DIM FUEL.dim</FullPath>
+      <Name>DIM YEAR.dim</Name>
+      <FullPath>DIM YEAR.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>FACT CAR LISTING.dim</Name>
+      <FullPath>FACT CAR LISTING.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
