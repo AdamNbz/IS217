@@ -164,13 +164,69 @@ SELECT
     [Top10ModelsPerFuel] ON ROWS
 FROM [SSIS];
 
--- 12. 
+-- 12. Thông tin chi tiết (giá trung bình và số lượng xe) các model của hãng Toyota.
+WITH
+SET [Brands] AS
+    [DIM MODEL].[Brand-Model].[Brand].Members
 
--- 13
+SELECT
+    { [Measures].[Avg Price],
+      [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
+    NON EMPTY
+    DRILLDOWNMEMBER(
+        [Brands],
+        { [DIM MODEL].[Brand-Model].[Brand].&[Toyota] }
+    ) ON ROWS
+FROM [SSIS];
 
--- 14
 
--- 15
+-- 13. Giá trung bình, số lượng xe và khấu hao giá thị trường của từng hãng xe.
+SELECT
+    NON EMPTY
+    [DIM BRAND].[Brand Name].Members ON COLUMNS,
+    {
+        [Measures].[Avg Price],
+        [Measures].[FACT CAR LISTING Count],
+        [Measures].[Market Share %]
+    } ON ROWS
+FROM [SSIS];
+
+-- 14. Giá trung bình theo (Age bucket × Fuel type) chỉ cho hãng Toyota.
+WITH
+SET [AgeBuckets_NoUnknown] AS
+    FILTER(
+        [DIM AGE BUCKET].[Age Bucket Label].Members,
+        UCASE(
+            [DIM AGE BUCKET].[Age Bucket Label].CurrentMember.Name
+        ) <> "UNKNOWN"
+        AND NOT [DIM AGE BUCKET].[Age Bucket Label].CurrentMember
+            IS [DIM AGE BUCKET].[Age Bucket Label].DefaultMember
+    )
+SET [FuelTypes_NoAll] AS
+    FILTER(
+        [DIM FUEL].[Fuel Type].Members,
+        NOT [DIM FUEL].[Fuel Type].CurrentMember
+            IS [DIM FUEL].[Fuel Type].DefaultMember
+    )
+SELECT
+    NON EMPTY [FuelTypes_NoAll] ON COLUMNS,
+    NON EMPTY [AgeBuckets_NoUnknown] ON ROWS
+FROM [SSIS]
+WHERE (
+    [DIM BRAND].[Brand Name].&[Toyota],
+    [Measures].[Avg Price]
+);
+
+-- 15. So sánh tổng toàn thị trường với từng hãng.
+WITH
+SET [BrandPlusAll] AS
+    { [DIM BRAND].[Brand Name].DefaultMember }
+    + [DIM BRAND].[Brand Name].Members
+SELECT
+    { [Measures].[FACT CAR LISTING Count],
+      [Measures].[Avg Price] } ON COLUMNS,
+    [BrandPlusAll] ON ROWS
+FROM [SSIS];
 
 
 
