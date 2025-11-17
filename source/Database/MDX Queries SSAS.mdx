@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ﻿-- 1. Top 10 model xe có giá trung bình cao nhất (lọc model ≥ 50 xe).
+=======
+﻿-- Câu truy vấn 1. Thị phần của mỗi hãng (tính theo số lượng xe).
+>>>>>>> Stashed changes
 =======
 ﻿-- Câu truy vấn 1. Thị phần của mỗi hãng (tính theo số lượng xe).
 >>>>>>> Stashed changes
@@ -43,10 +47,16 @@ SELECT { [Measures].[Avg Price] } ON COLUMNS,
 SELECT 
     { [Measures].[Market Share %], [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
     ORDER( [BrandsWithData], [Measures].[Market Share %], BDESC ) ON ROWS
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 FROM [SSIS];
 
 -- 4. So sánh giá trung bình theo nhóm tuổi xe
+=======
+FROM [SSIS];
+
+--Câu truy vấn 2. So sánh giá trung bình theo nhóm tuổi xe
+>>>>>>> Stashed changes
 WITH
 SET [AgeBuckets_NoUnknown] AS
     FILTER(
@@ -63,6 +73,7 @@ SELECT
     ) ON ROWS
 FROM [SSIS];
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 -- 5. So sánh giá trung bình Hybrid với Petrol/Diesel trong cùng hãng.
 WITH
@@ -99,6 +110,8 @@ FROM [SSIS];
 
 -- 7. So sánh giá trung bình giữa các “bucket” quãng đường (dưới 20k, 20–50k, 50–100k, >100k km)
 =======
+=======
+>>>>>>> Stashed changes
 -- Câu truy vấn 3. So sánh giá trung bình giữa các “bucket” quãng đường (dưới 20k, 20–50k, 50–100k, >100k km)
 >>>>>>> Stashed changes
 WITH
@@ -121,8 +134,11 @@ SELECT
 FROM [SSIS];
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 -- 8. Khấu hao giá theo tuổi xe (Tuổi xe = Năm hiện tại – Năm sản xuất).
 =======
+=======
+>>>>>>> Stashed changes
 -- Câu truy vấn 4. Khấu hao giá theo tuổi xe (Tuổi xe = Năm hiện tại – Năm sản xuất).
 >>>>>>> Stashed changes
 SELECT { [Measures].[Avg Price] } ON COLUMNS,
@@ -131,19 +147,53 @@ SELECT { [Measures].[Avg Price] } ON COLUMNS,
 FROM [SSIS];
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 -- 9. Model xe bán chạy nhất (nhiều xe nhất) trong từng hãng.
 =======
 -- Câu truy vấn 5. So sánh tổng toàn thị trường với từng hãng.
 >>>>>>> Stashed changes
+=======
+-- Câu truy vấn 5. So sánh tổng toàn thị trường với từng hãng.
 WITH
-SET [TopModelEachBrand] AS
-  GENERATE([DIM BRAND].[Brand Name].Members,
-           TOPCOUNT(EXISTING [DIM MODEL].[Brand-Model].[Model].Members,
-                    1, [Measures].[FACT CAR LISTING Count]))
-SELECT { [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
-       [TopModelEachBrand] ON ROWS
+SET [BrandPlusAll] AS
+    { [DIM BRAND].[Brand Name].DefaultMember }
+    + [DIM BRAND].[Brand Name].Members
+SELECT
+    { [Measures].[FACT CAR LISTING Count],
+      [Measures].[Avg Price] } ON COLUMNS,
+    [BrandPlusAll] ON ROWS
 FROM [SSIS];
 
+-- Câu truy vấn 6. Thông tin chi tiết (giá trung bình và số lượng xe) các model của hãng Toyota.
+SELECT
+    { [Measures].[Avg Price],
+      [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
+    NON EMPTY
+        [DIM MODEL].[Brand-Model].[Model].Members ON ROWS
+FROM [SSIS]
+WHERE (
+    [DIM BRAND].[Brand Name].[Toyota]
+);
+
+-- Câu truy vấn 7. Model xe bán chạy nhất (nhiều xe nhất) trong từng hãng.
+>>>>>>> Stashed changes
+WITH
+SET [TopModelEachBrand] AS
+  GENERATE(
+    [DIM BRAND].[Brand Name].[Brand Name].Members,
+    [DIM BRAND].[Brand Name].CurrentMember *
+    TOPCOUNT(
+        EXISTING [DIM MODEL].[Brand-Model].[Model].Members,
+        1,
+        [Measures].[FACT CAR LISTING Count]
+    )
+  )
+SELECT
+    { [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
+    NON EMPTY [TopModelEachBrand] ON ROWS
+FROM [SSIS];
+
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 -- 10. Thị phần của mỗi hãng (tính theo số lượng xe).
 WITH
@@ -243,6 +293,8 @@ SELECT
     NON EMPTY [TopModelEachBrand] ON ROWS
 FROM [SSIS];
 
+=======
+>>>>>>> Stashed changes
 -- Câu truy vấn 8. Top 10 model xe đắt nhất theo từng loại nhiên liệu xe (sắp xếp theo giá trung bình).
 WITH
 SET [FuelTypes_NoAll] AS
@@ -295,8 +347,11 @@ WHERE (
 );
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 -- 15. So sánh tổng toàn thị trường với từng hãng.
 =======
+=======
+>>>>>>> Stashed changes
 -- Câu truy vấn 10. So sánh giá trung bình Hybrid với Petrol/Diesel trong cùng hãng.
 >>>>>>> Stashed changes
 WITH
@@ -385,5 +440,9 @@ SELECT
         10,
         [Measures].[Median Model Avg]
     ) ON ROWS
+<<<<<<< Updated upstream
+FROM [SSIS];
+>>>>>>> Stashed changes
+=======
 FROM [SSIS];
 >>>>>>> Stashed changes
