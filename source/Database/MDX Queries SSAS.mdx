@@ -146,15 +146,18 @@ WHERE (
 WITH
 SET [Brands_NoAll] AS
     FILTER(
-        [DIM BRAND].[Brand Name].Members,
-        NOT [DIM BRAND].[Brand Name].CurrentMember
-            IS [DIM BRAND].[Brand Name].DefaultMember
+        [DIM BRAND].[Brand Name].[Brand Name].Members,
+        NOT [DIM BRAND].[Brand Name].CurrentMember IS
+            [DIM BRAND].[Brand Name].DefaultMember
     )
+
 SELECT
-  { [DIM FUEL].[Fuel Type].&[Hybrid],
-    [DIM FUEL].[Fuel Type].&[Petrol],
-    [DIM FUEL].[Fuel Type].&[Diesel] } ON COLUMNS,
-  [Brands_NoAll] ON ROWS
+    {
+        [DIM FUEL].[Fuel Type].[Hybrid],
+        [DIM FUEL].[Fuel Type].[Petrol],
+        [DIM FUEL].[Fuel Type].[Diesel]
+    } ON COLUMNS,
+    NON EMPTY [Brands_NoAll] ON ROWS
 FROM [SSIS]
 WHERE ( [Measures].[Avg Price] );
 
