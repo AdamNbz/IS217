@@ -1884,7 +1884,7 @@ CREATE MEMBER CURRENTCUBE.[Measures].[Avg Price] AS
 CREATE MEMBER CURRENTCUBE.[Measures].[Avg Price per 1k km]
  AS IIF([Measures].[FACT CAR LISTING Count]=0, NULL,
       [Measures].[Price Per 1k Km] / [Measures].[FACT CAR LISTING Count]), 
-FORMAT_STRING = "Short Date", 
+FORMAT_STRING = "Currency", 
 VISIBLE = 1;    
 
 /* Thị phần theo số lượng */
