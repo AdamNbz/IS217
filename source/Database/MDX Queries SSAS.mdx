@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 ﻿-- 1. Top 10 model xe có giá trung bình cao nhất (lọc model ≥ 50 xe).
+=======
+﻿-- Câu truy vấn 1. Thị phần của mỗi hãng (tính theo số lượng xe).
+>>>>>>> Stashed changes
 WITH
 SET [Models>=50] AS
   FILTER([DIM MODEL].[Model].Members,
@@ -15,6 +19,7 @@ MEMBER [Measures].[Median Model Avg] AS
         EXISTING [DIM MODEL].[Model].Members,
         [Measures].[Avg Price]
     )
+<<<<<<< Updated upstream
 
 SET [BrandsWithMedian] AS
     FILTER(
@@ -34,6 +39,11 @@ FROM [SSIS];
 -- 3. Top 10 model xe đắt nhất (sắp xếp theo giá trung bình).
 SELECT { [Measures].[Avg Price] } ON COLUMNS,
        TOPCOUNT([DIM MODEL].[Brand-Model].[Model], 10, [Measures].[Avg Price]) ON ROWS
+=======
+SELECT 
+    { [Measures].[Market Share %], [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
+    ORDER( [BrandsWithData], [Measures].[Market Share %], BDESC ) ON ROWS
+>>>>>>> Stashed changes
 FROM [SSIS];
 
 -- 4. So sánh giá trung bình theo nhóm tuổi xe
@@ -53,6 +63,7 @@ SELECT
     ) ON ROWS
 FROM [SSIS];
 
+<<<<<<< Updated upstream
 -- 5. So sánh giá trung bình Hybrid với Petrol/Diesel trong cùng hãng.
 WITH
 SET [Brands_NoAll] AS
@@ -87,6 +98,9 @@ SELECT
 FROM [SSIS];
 
 -- 7. So sánh giá trung bình giữa các “bucket” quãng đường (dưới 20k, 20–50k, 50–100k, >100k km)
+=======
+-- Câu truy vấn 3. So sánh giá trung bình giữa các “bucket” quãng đường (dưới 20k, 20–50k, 50–100k, >100k km)
+>>>>>>> Stashed changes
 WITH
 SET [MileageBuckets_NoUnknown_NoAll] AS
     FILTER(
@@ -106,13 +120,21 @@ SELECT
     ) ON ROWS
 FROM [SSIS];
 
+<<<<<<< Updated upstream
 -- 8. Khấu hao giá theo tuổi xe (Tuổi xe = Năm hiện tại – Năm sản xuất).
+=======
+-- Câu truy vấn 4. Khấu hao giá theo tuổi xe (Tuổi xe = Năm hiện tại – Năm sản xuất).
+>>>>>>> Stashed changes
 SELECT { [Measures].[Avg Price] } ON COLUMNS,
        ORDER([DIM YEAR].[Manufacture Year].[Manufacture Year].Members,
              [DIM YEAR].[Manufacture Year].MemberValue, BASC) ON ROWS
 FROM [SSIS];
 
+<<<<<<< Updated upstream
 -- 9. Model xe bán chạy nhất (nhiều xe nhất) trong từng hãng.
+=======
+-- Câu truy vấn 5. So sánh tổng toàn thị trường với từng hãng.
+>>>>>>> Stashed changes
 WITH
 SET [TopModelEachBrand] AS
   GENERATE([DIM BRAND].[Brand Name].Members,
@@ -122,6 +144,7 @@ SELECT { [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
        [TopModelEachBrand] ON ROWS
 FROM [SSIS];
 
+<<<<<<< Updated upstream
 -- 10. Thị phần của mỗi hãng (tính theo số lượng xe).
 WITH
 SET [BrandsWithData] AS
@@ -169,10 +192,14 @@ WITH
 SET [Brands] AS
     [DIM MODEL].[Brand-Model].[Brand].Members
 
+=======
+-- Câu truy vấn 6. Thông tin chi tiết (giá trung bình và số lượng xe) các model của hãng Toyota.
+>>>>>>> Stashed changes
 SELECT
     { [Measures].[Avg Price],
       [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
     NON EMPTY
+<<<<<<< Updated upstream
     DRILLDOWNMEMBER(
         [Brands],
         { [DIM MODEL].[Brand-Model].[Brand].&[Toyota] }
@@ -192,6 +219,56 @@ SELECT
 FROM [SSIS];
 
 -- 14. Giá trung bình theo (Age bucket × Fuel type) chỉ cho hãng Toyota.
+=======
+        [DIM MODEL].[Brand-Model].[Model].Members ON ROWS
+FROM [SSIS]
+WHERE (
+    [DIM BRAND].[Brand Name].[Toyota]
+);
+
+-- Câu truy vấn 7. Model xe bán chạy nhất (nhiều xe nhất) trong từng hãng.
+WITH
+SET [TopModelEachBrand] AS
+  GENERATE(
+    [DIM BRAND].[Brand Name].[Brand Name].Members,
+    [DIM BRAND].[Brand Name].CurrentMember *
+    TOPCOUNT(
+        EXISTING [DIM MODEL].[Brand-Model].[Model].Members,
+        1,
+        [Measures].[FACT CAR LISTING Count]
+    )
+  )
+SELECT
+    { [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
+    NON EMPTY [TopModelEachBrand] ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 8. Top 10 model xe đắt nhất theo từng loại nhiên liệu xe (sắp xếp theo giá trung bình).
+WITH
+SET [FuelTypes_NoAll] AS
+    FILTER(
+        [DIM FUEL].[Fuel Type].Members,
+        NOT [DIM FUEL].[Fuel Type].CurrentMember IS [DIM FUEL].[Fuel Type].DefaultMember
+    )
+
+SET [Top10ModelsPerFuel] AS
+  GENERATE(
+    [FuelTypes_NoAll], 
+    
+    [DIM FUEL].[Fuel Type].CurrentMember * TOPCOUNT(
+        EXISTING [DIM MODEL].[Model Name].Members,
+      10, 
+      [Measures].[Avg Price]
+    )
+  )
+
+SELECT 
+    { [Measures].[Avg Price] } ON COLUMNS,
+    NON EMPTY [Top10ModelsPerFuel] ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 9. Giá trung bình theo (Age bucket × Fuel type) chỉ cho hãng Toyota.
+>>>>>>> Stashed changes
 WITH
 SET [AgeBuckets_NoUnknown] AS
     FILTER(
@@ -217,12 +294,17 @@ WHERE (
     [Measures].[Avg Price]
 );
 
+<<<<<<< Updated upstream
 -- 15. So sánh tổng toàn thị trường với từng hãng.
+=======
+-- Câu truy vấn 10. So sánh giá trung bình Hybrid với Petrol/Diesel trong cùng hãng.
+>>>>>>> Stashed changes
 WITH
 SET [BrandPlusAll] AS
     { [DIM BRAND].[Brand Name].DefaultMember }
     + [DIM BRAND].[Brand Name].Members
 SELECT
+<<<<<<< Updated upstream
     { [Measures].[FACT CAR LISTING Count],
       [Measures].[Avg Price] } ON COLUMNS,
     [BrandPlusAll] ON ROWS
@@ -231,3 +313,77 @@ FROM [SSIS];
 
 
 
+=======
+  { [DIM FUEL].[Fuel Type].&[Hybrid],
+    [DIM FUEL].[Fuel Type].&[Petrol],
+    [DIM FUEL].[Fuel Type].&[Diesel] } ON COLUMNS,
+  [Brands_NoAll] ON ROWS
+FROM [SSIS]
+WHERE ( [Measures].[Avg Price] );
+
+--Câu 11. Top 10 model xe có giá trung bình cao nhất (lọc model ≥ 50 xe).
+WITH
+SET [Models>=50] AS
+  FILTER([DIM MODEL].[Model].Members,
+         [Measures].[FACT CAR LISTING Count] >= 50)
+SELECT
+  { [Measures].[Avg Price], [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
+  TOPCOUNT([Models>=50], 10, [Measures].[Avg Price]) ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 12 Top 10 model xe đắt nhất (sắp xếp theo giá trung bình).
+SELECT { [Measures].[Avg Price] } ON COLUMNS,
+       TOPCOUNT([DIM MODEL].[Brand-Model].[Model], 10, [Measures].[Avg Price]) ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 13. Top 10 model xe “giá trị” nhất tính theo giá trung bình trên 1,000 km thấp nhất.
+WITH
+SET [ModelsWithPricePerKm] AS
+    FILTER(
+        [DIM MODEL].[Brand-Model].[Model].Members,
+        NOT ISEMPTY([Measures].[Avg Price per 1k km])
+    )
+
+SELECT 
+    { [Measures].[Avg Price per 1k km] } ON COLUMNS,
+    TOPCOUNT(
+        [ModelsWithPricePerKm],
+        10,
+        -[Measures].[Avg Price per 1k km]
+    ) ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 14. Giá trung bình, số lượng xe và khấu hao giá thị trường của từng hãng xe.
+SELECT
+    NON EMPTY
+    [DIM BRAND].[Brand Name].Members ON COLUMNS,
+    {
+        [Measures].[Avg Price],
+        [Measures].[FACT CAR LISTING Count],
+        [Measures].[Market Share %]
+    } ON ROWS
+FROM [SSIS];
+
+--Câu 15. Top 10 hãng xe có median của giá trung bình theo model xe cao nhất.
+WITH
+MEMBER [Measures].[Median Model Avg] AS
+    MEDIAN(
+        EXISTING [DIM MODEL].[Model].Members,
+        [Measures].[Avg Price]
+    )
+
+SET [BrandsWithMedian] AS
+    FILTER(
+        [DIM MODEL].[Brand].Members,
+        NOT ISEMPTY([Measures].[Median Model Avg])
+    )
+
+SELECT
+    { [Measures].[Median Model Avg] } ON COLUMNS,
+    TOPCOUNT(
+        [BrandsWithMedian],
+        10,
+        [Measures].[Median Model Avg]
+    ) ON ROWS
+FROM [SSIS];
+>>>>>>> Stashed changes
