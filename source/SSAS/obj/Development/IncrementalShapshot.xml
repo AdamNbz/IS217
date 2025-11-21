@@ -19,77 +19,70 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>ji/u4JbgXN6rpRH5OxFLhtlH6Mk=11/14/2025 3:38:24 PM11/14/2025 3:38:24 PM</TimeStamp>
+        <TimeStamp>1TfUPKt4FmKXL3873s5rn05v/iM=11/21/2025 11:10:50 AM11/21/2025 11:10:50 AM</TimeStamp>
         <ID>
           <String>SSIS</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>JhfZ1TSYKXtqtCZ+o4h/Z13RDWM=11/14/2025 3:38:32 PM11/14/2025 3:38:32 PM</TimeStamp>
+        <TimeStamp>Nf4r4U0zz9YGb33099+9O9uG6u4=11/21/2025 11:10:59 AM11/21/2025 11:10:59 AM</TimeStamp>
         <ID>
           <String>SSIS</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>7xkitcjTYXjXi2zDGp1iWWDlSf4=11/14/2025 3:38:39 PM11/14/2025 3:38:39 PM</TimeStamp>
+        <TimeStamp>eIi0J6rzuC0Zgd6QryshjYY9pZQ=11/21/2025 11:11:40 AM11/21/2025 11:11:40 AM</TimeStamp>
         <ID>
           <String>DIM AGE BUCKET</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>B5+RqWqXOxr1GvA/7Kslff1A3LQ=11/14/2025 3:38:46 PM11/14/2025 3:38:46 PM</TimeStamp>
-        <ID>
-          <String>DIM BRAND</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>tOX64qgPK9q/TLcBRzanau/+Usw=11/14/2025 3:38:54 PM11/14/2025 3:38:53 PM</TimeStamp>
-        <ID>
-          <String>DIM ENGINE</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>wUIGx/hDIuXCItDe7nqDmqhan6M=11/14/2025 3:39:00 PM11/14/2025 3:39:00 PM</TimeStamp>
-        <ID>
-          <String>DIM FUEL</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>4TNnSDpchMFjHQFC57l1bM21pmM=11/14/2025 3:39:07 PM11/14/2025 3:39:07 PM</TimeStamp>
-        <ID>
-          <String>DIM MILEAGE BUCKET</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>xnteu1kPtOhG7onGAxWNYR6n624=11/14/2025 3:47:10 PM11/14/2025 3:39:21 PM</TimeStamp>
-        <ID>
-          <String>DIM MODEL</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>efNLb4FgTmfnVI7b81jNLCH1RcI=11/14/2025 3:39:30 PM11/14/2025 3:39:30 PM</TimeStamp>
+        <TimeStamp>S7SNw3mYawDLMGnPBowgiaqjqM4=11/21/2025 11:11:40 AM11/21/2025 11:11:40 AM</TimeStamp>
         <ID>
           <String>DIM YEAR</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>1g6ZfM2LNkjpUhBoCHl+2zM0tX4=11/14/2025 3:39:43 PM11/14/2025 3:39:43 PM</TimeStamp>
+        <TimeStamp>MXuqTP65RLsCR5ekP9+c9rcbcFE=11/21/2025 11:22:22 AM11/21/2025 11:11:40 AM</TimeStamp>
+        <ID>
+          <String>DIM BRAND</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>dEIu17DfCy1R5Eok3B2UzRfXR4k=11/21/2025 11:11:40 AM11/21/2025 11:11:40 AM</TimeStamp>
+        <ID>
+          <String>DIM ENGINE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>kdNoVqtUbnujMh98UHJWQ2tNmQ4=11/21/2025 11:11:40 AM11/21/2025 11:11:40 AM</TimeStamp>
+        <ID>
+          <String>DIM MILEAGE BUCKET</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>exCA0I30Tetbw4CREOV0gv8kr2c=11/21/2025 11:11:40 AM11/21/2025 11:11:40 AM</TimeStamp>
+        <ID>
+          <String>DIM FUEL</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>mMTDTfk6VImCmAoMNqTanHkqNPU=11/21/2025 11:11:40 AM11/21/2025 11:11:40 AM</TimeStamp>
         <ID>
           <String>FACT CAR LISTING</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>pvqPYkcPWUokqnyFQ+wP5t8V00U=11/17/2025 10:49:33 PM11/14/2025 3:39:43 PMH18nobxHJOmkAsaLRGx9wrJ8/88=11/14/2025 6:46:08 PM11/14/2025 3:39:43 PM</TimeStamp>
+        <TimeStamp>Cce7E7MZO9kRo/VUu7knXUhprl4=11/21/2025 11:14:20 AM11/21/2025 11:11:40 AMiobl9ZcHNmtkS3WTJFbtT4QGUDA=11/21/2025 11:11:40 AM11/21/2025 11:11:40 AM</TimeStamp>
         <ID>
           <String>SSIS</String>
         </ID>
@@ -97,7 +90,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>6MM5cMgCrZy5m079yYNjI6Jd86s=11/14/2025 3:38:11 PM11/14/2025 3:38:11 PM</TimeStamp>
+      <TimeStamp>b4dxBrqx4dpp8LYDz6scwsp0Muo=11/21/2025 11:10:35 AM11/21/2025 11:10:35 AM</TimeStamp>
       <ID>
         <String>SSAS</String>
       </ID>
@@ -106,5 +99,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2025-11-17T15:49:39.31Z</LastDeployed>
+  <LastDeployed>2025-11-21T04:23:33.566667Z</LastDeployed>
 </DeploymentSnapshot>

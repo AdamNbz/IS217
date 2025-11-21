@@ -1,4 +1,4 @@
-﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="fec777cc-9c20-412c-9c47-321b47304d98" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3f22aa73-4ef9-4194-8006-80e8556c756e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>SSIS</ID>
   <Name>SSIS</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -42,35 +42,36 @@
   <DataSourceID>SSIS</DataSourceID>
   <Schema>
     <xs:schema id="SSIS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
-      <xs:element name="SSIS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="9ea34a7a-665f-4505-acc7-11ab3a96e55f">
+      <xs:element name="SSIS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="94d49485-af3f-4f27-9ea3-58b4ed18ac36">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="dbo_DIM_AGE_BUCKET" msprop:DbTableName="DIM_AGE_BUCKET" msprop:FriendlyName="DIM_AGE_BUCKET" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="621f4aa2-6417-4871-a3df-09c2a3ef2a69">
+            <xs:element name="dbo_DIM_AGE_BUCKET" msprop:DbTableName="DIM_AGE_BUCKET" msprop:FriendlyName="DIM_AGE_BUCKET" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="ea56fb30-cb8e-40dd-a802-38de5928b5f4">
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="age_bucket_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="age_bucket_id" msprop:DbColumnName="age_bucket_id" msprop:design-time-name="872be8dc-9e83-45f7-8913-6e960da33fb8" type="xs:int" />
-                  <xs:element name="age_bucket_label" msprop:FriendlyName="age_bucket_label" msprop:DbColumnName="age_bucket_label" msprop:design-time-name="2430764a-3615-48a7-84e3-6c2a11f146df">
+                  <xs:element name="age_bucket_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="age_bucket_id" msprop:DbColumnName="age_bucket_id" msprop:design-time-name="f3109c0a-eb11-4d3a-9462-ac8947cd7d4e" type="xs:int" />
+                  <xs:element name="age_bucket_label" msprop:FriendlyName="age_bucket_label" msprop:DbColumnName="age_bucket_label" msprop:design-time-name="57125cef-32e0-4b9c-846b-d3716640e8e1">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
                         <xs:maxLength value="50" />
                       </xs:restriction>
                     </xs:simpleType>
                   </xs:element>
-                  <xs:element name="age_bucket_order" msprop:FriendlyName="age_bucket_order" msprop:DbColumnName="age_bucket_order" msprop:design-time-name="6cfa8b35-6d09-4f1e-8d10-eafddfdcb27e">
+                  <xs:element name="age_bucket_order" msprop:FriendlyName="age_bucket_order" msprop:DbColumnName="age_bucket_order" msprop:design-time-name="0c2efd5a-23f2-4082-90c0-6517c58cc640" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DIM_BRAND" msprop:DbTableName="DIM_BRAND" msprop:FriendlyName="DIM_BRAND" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="317c3910-31d8-4135-9578-08ffb79aad0e">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="brand_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="brand_id" msprop:DbColumnName="brand_id" msprop:design-time-name="5002efba-3044-415f-9ef2-52971ad07a9d" type="xs:int" />
+                  <xs:element name="brand_name" msprop:FriendlyName="brand_name" msprop:DbColumnName="brand_name" msprop:design-time-name="ab8b0780-9e86-4ebc-aa99-bd6335442379">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
                         <xs:maxLength value="50" />
                       </xs:restriction>
                     </xs:simpleType>
                   </xs:element>
-                  <xs:element name="min_age" msprop:FriendlyName="min_age" msprop:DbColumnName="min_age" msprop:design-time-name="7c6afda2-4eab-4abf-a337-779b50c91865" minOccurs="0">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:maxLength value="50" />
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:element>
-                  <xs:element name="max_age" msprop:FriendlyName="max_age" msprop:DbColumnName="max_age" msprop:design-time-name="48ed92e0-a6ba-4d97-9204-f83e82eeeb1e" minOccurs="0">
+                  <xs:element name="model_name" msprop:FriendlyName="model_name" msprop:DbColumnName="model_name" msprop:design-time-name="dd8b90f3-9dc2-46dc-a4b7-0d63171f5933">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
                         <xs:maxLength value="50" />
@@ -80,11 +81,11 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_DIM_BRAND" msprop:DbTableName="DIM_BRAND" msprop:FriendlyName="DIM_BRAND" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="677623bf-e6fe-49e2-bd1b-e26aa4264e1c">
+            <xs:element name="dbo_DIM_ENGINE" msprop:DbTableName="DIM_ENGINE" msprop:FriendlyName="DIM_ENGINE" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="7f47fc6e-6d79-490c-a3e8-9fa34f870f87">
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="brand_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="brand_id" msprop:DbColumnName="brand_id" msprop:design-time-name="fb189885-d6f5-4515-90fc-875b20483d25" type="xs:int" />
-                  <xs:element name="brand_name" msprop:FriendlyName="brand_name" msprop:DbColumnName="brand_name" msprop:design-time-name="8e6cdff4-a774-485e-8dae-d1a0e04f6527">
+                  <xs:element name="engine_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="engine_id" msprop:DbColumnName="engine_id" msprop:design-time-name="030d9a91-5fb9-44e1-b4cb-3c6e681e8d71" type="xs:int" />
+                  <xs:element name="engine_size_l" msprop:FriendlyName="engine_size_l" msprop:DbColumnName="engine_size_l" msprop:design-time-name="19926e3a-4918-47ad-9bbf-6ee389fe740b">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
                         <xs:maxLength value="50" />
@@ -94,11 +95,11 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_DIM_ENGINE" msprop:DbTableName="DIM_ENGINE" msprop:FriendlyName="DIM_ENGINE" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="958b6637-0154-4bfb-aae0-8b053f7d0277">
+            <xs:element name="dbo_DIM_FUEL" msprop:DbTableName="DIM_FUEL" msprop:FriendlyName="DIM_FUEL" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="fee35199-dad5-46a2-aeff-aa0d559e929e">
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="engine_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="engine_id" msprop:DbColumnName="engine_id" msprop:design-time-name="c1817463-954b-4349-92dd-9e0c021b903f" type="xs:int" />
-                  <xs:element name="engine_type" msprop:FriendlyName="engine_type" msprop:DbColumnName="engine_type" msprop:design-time-name="6e51ec6a-faff-4a5a-9e66-56d425db4b31">
+                  <xs:element name="fuel_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="fuel_id" msprop:DbColumnName="fuel_id" msprop:design-time-name="2ad1f5c2-74ef-4d73-83f4-67914214a63e" type="xs:int" />
+                  <xs:element name="fuel_type" msprop:FriendlyName="fuel_type" msprop:DbColumnName="fuel_type" msprop:design-time-name="08c86e9d-1d89-4148-862e-cbc12fb40c8b">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
                         <xs:maxLength value="50" />
@@ -108,102 +109,45 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_DIM_FUEL" msprop:DbTableName="DIM_FUEL" msprop:FriendlyName="DIM_FUEL" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="1f252a5f-6b56-4a34-b160-df89679e20ac">
+            <xs:element name="dbo_DIM_MILEAGE_BUCKET" msprop:DbTableName="DIM_MILEAGE_BUCKET" msprop:FriendlyName="DIM_MILEAGE_BUCKET" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="923a5601-37b9-409a-b4ca-5bc8a474d787">
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="fuel_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="fuel_id" msprop:DbColumnName="fuel_id" msprop:design-time-name="6611d44d-9a08-4854-a1e9-d47c7235eb2e" type="xs:int" />
-                  <xs:element name="fuel_type" msprop:FriendlyName="fuel_type" msprop:DbColumnName="fuel_type" msprop:design-time-name="e9cc9749-94d1-4fad-8593-e1b23570a624">
+                  <xs:element name="mileage_bucket_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="mileage_bucket_id" msprop:DbColumnName="mileage_bucket_id" msprop:design-time-name="45e10ee5-d67d-4a2e-b567-9cfb59df2958" type="xs:int" />
+                  <xs:element name="mileage_bucket_label" msprop:FriendlyName="mileage_bucket_label" msprop:DbColumnName="mileage_bucket_label" msprop:design-time-name="3f38bb85-ab66-4af5-b864-a7f15a68619b">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
                         <xs:maxLength value="50" />
                       </xs:restriction>
                     </xs:simpleType>
                   </xs:element>
+                  <xs:element name="mileage_bucket_order" msprop:FriendlyName="mileage_bucket_order" msprop:DbColumnName="mileage_bucket_order" msprop:design-time-name="1e885da6-cc4a-48a6-a5d6-ce2206b5871d" type="xs:int" />
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_DIM_MILEAGE_BUCKET" msprop:DbTableName="DIM_MILEAGE_BUCKET" msprop:FriendlyName="DIM_MILEAGE_BUCKET" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="d121a01f-5532-4531-891e-44f2966992cd">
+            <xs:element name="dbo_DIM_YEAR" msprop:DbTableName="DIM_YEAR" msprop:FriendlyName="DIM_YEAR" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="204a8c3f-3ee8-4164-ab93-63de9aa966ca">
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="mileage_bucket_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="mileage_bucket_id" msprop:DbColumnName="mileage_bucket_id" msprop:design-time-name="c74ecbad-e6d5-4ee6-a249-23de5d0e73bb" type="xs:int" />
-                  <xs:element name="mileage_bucket_label" msprop:FriendlyName="mileage_bucket_label" msprop:DbColumnName="mileage_bucket_label" msprop:design-time-name="a1fe5af5-dd4b-4de6-bcc0-196c30f218ae">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:maxLength value="50" />
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:element>
-                  <xs:element name="mileage_bucket_order" msprop:FriendlyName="mileage_bucket_order" msprop:DbColumnName="mileage_bucket_order" msprop:design-time-name="47270ddc-8b02-4197-8567-81f21969ddbb">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:maxLength value="50" />
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:element>
-                  <xs:element name="min_km" msprop:FriendlyName="min_km" msprop:DbColumnName="min_km" msprop:design-time-name="487bed9d-be4c-47cb-93cd-f960ff4bb573" minOccurs="0">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:maxLength value="50" />
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:element>
-                  <xs:element name="max_km" msprop:FriendlyName="max_km" msprop:DbColumnName="max_km" msprop:design-time-name="373bde6e-5a60-4203-9b45-3a469a917990" minOccurs="0">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:maxLength value="50" />
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:element>
+                  <xs:element name="year_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="year_id" msprop:DbColumnName="year_id" msprop:design-time-name="7ce42624-c9ca-470e-a4c7-b70b73b9eb1d" type="xs:int" />
+                  <xs:element name="manufacture_year" msprop:FriendlyName="manufacture_year" msprop:DbColumnName="manufacture_year" msprop:design-time-name="d5959e8a-7c22-43a5-b78e-988233713aca" type="xs:int" />
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_DIM_MODEL" msprop:DbTableName="DIM_MODEL" msprop:FriendlyName="DIM_MODEL" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="ae9ad000-fdc3-4be8-8fbb-cb835cdb7328">
+            <xs:element name="dbo_FACT_CAR_LISTING" msprop:DbTableName="FACT_CAR_LISTING" msprop:FriendlyName="FACT_CAR_LISTING" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="9d72c428-92c7-4913-afa8-c88989a1be05">
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="model_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="model_id" msprop:DbColumnName="model_id" msprop:design-time-name="a93bf11a-9b90-4b59-8091-84db1518f1b1" type="xs:int" />
-                  <xs:element name="brand_id" msprop:FriendlyName="brand_id" msprop:DbColumnName="brand_id" msprop:design-time-name="33342b42-d70d-41b7-adb5-64d74e679798" type="xs:int" />
-                  <xs:element name="model_name" msprop:FriendlyName="model_name" msprop:DbColumnName="model_name" msprop:design-time-name="a64f1221-e5a5-4ae1-936a-58bcb8a426f3">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:maxLength value="50" />
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:element>
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="dbo_DIM_YEAR" msprop:DbTableName="DIM_YEAR" msprop:FriendlyName="DIM_YEAR" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="674de35e-0b6a-43b7-b7cc-ca9b07badc75">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:element name="year_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="year_id" msprop:DbColumnName="year_id" msprop:design-time-name="8b915baf-55e2-4851-b1e8-df7c5af011e4" type="xs:int" />
-                  <xs:element name="manufacture_year" msprop:FriendlyName="manufacture_year" msprop:DbColumnName="manufacture_year" msprop:design-time-name="f897f86a-ad37-4e5f-b7bb-d0c0dc089e0c">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:maxLength value="50" />
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:element>
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="dbo_FACT_CAR_LISTING" msprop:DbTableName="FACT_CAR_LISTING" msprop:FriendlyName="FACT_CAR_LISTING" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="861719f3-60a5-4fdf-ad6b-c1fcdea84b7e">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:element name="listing_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="listing_id" msprop:DbColumnName="listing_id" msprop:design-time-name="ffd846bd-03b5-496a-be8c-298bb35624b9" type="xs:long" />
-                  <xs:element name="brand_id" msprop:FriendlyName="brand_id" msprop:DbColumnName="brand_id" msprop:design-time-name="f8a58751-9f5e-434f-84cc-a3c796691680" type="xs:int" />
-                  <xs:element name="model_id" msprop:FriendlyName="model_id" msprop:DbColumnName="model_id" msprop:design-time-name="72534248-e2b6-4fdf-a781-35479eb2cfba" type="xs:int" />
-                  <xs:element name="fuel_id" msprop:FriendlyName="fuel_id" msprop:DbColumnName="fuel_id" msprop:design-time-name="9dca5beb-357b-4b32-8259-476d196188ad" type="xs:int" />
-                  <xs:element name="engine_id" msprop:FriendlyName="engine_id" msprop:DbColumnName="engine_id" msprop:design-time-name="9d8c84ca-1154-4c4e-83fa-8ac6e01dcab4" type="xs:int" />
-                  <xs:element name="year_id" msprop:FriendlyName="year_id" msprop:DbColumnName="year_id" msprop:design-time-name="c7eb7d6d-70ae-4c19-8864-5aa661263dea" type="xs:int" />
-                  <xs:element name="mileage_bucket_id" msprop:FriendlyName="mileage_bucket_id" msprop:DbColumnName="mileage_bucket_id" msprop:design-time-name="260a6617-c848-4df3-9579-055b2cf88212" type="xs:int" minOccurs="0" />
-                  <xs:element name="age_bucket_id" msprop:FriendlyName="age_bucket_id" msprop:DbColumnName="age_bucket_id" msprop:design-time-name="c7a927ef-2b4a-4efc-b342-9b6967f9be1e" type="xs:int" minOccurs="0" />
-                  <xs:element name="price_usd" msprop:FriendlyName="price_usd" msprop:DbColumnName="price_usd" msprop:design-time-name="99182089-5c16-4864-b2b5-00488e45562d" type="xs:decimal" />
-                  <xs:element name="mileage_km" msprop:FriendlyName="mileage_km" msprop:DbColumnName="mileage_km" msprop:design-time-name="7f92bb28-e6a1-4983-9c06-1d88883b4785" type="xs:int" />
-                  <xs:element name="age" msprop:FriendlyName="age" msprop:DbColumnName="age" msprop:design-time-name="dbb4a164-4886-4473-8ed3-b2bf75be3018" type="xs:int" />
-                  <xs:element name="price_per_1k_km" msprop:FriendlyName="price_per_1k_km" msprop:DbColumnName="price_per_1k_km" msprop:design-time-name="95cd709a-263d-4160-801e-1ca1dfcb2515" type="xs:decimal" minOccurs="0" />
-                  <xs:element name="overprice_threshold" msprop:FriendlyName="overprice_threshold" msprop:DbColumnName="overprice_threshold" msprop:design-time-name="1d21f29c-13a6-4d49-a1e1-c8847c4c5add" type="xs:double" minOccurs="0" />
-                  <xs:element name="is_overpriced" msprop:FriendlyName="is_overpriced" msprop:DbColumnName="is_overpriced" msprop:design-time-name="5b7ddd6d-7887-4a9f-9563-fed4e70038b8" type="xs:boolean" minOccurs="0" />
-                  <xs:element name="ingest_dt" msprop:FriendlyName="ingest_dt" msprop:DbColumnName="ingest_dt" msprop:design-time-name="ed10d391-7ae0-46f9-a253-bd08973cacbf" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="listing_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="listing_id" msprop:DbColumnName="listing_id" msprop:design-time-name="6eff7652-9abe-4939-9de2-d6dbb0fc0f17" type="xs:long" />
+                  <xs:element name="brand_id" msprop:FriendlyName="brand_id" msprop:DbColumnName="brand_id" msprop:design-time-name="0de81705-964e-43de-868d-3179a48b4c19" type="xs:int" />
+                  <xs:element name="fuel_id" msprop:FriendlyName="fuel_id" msprop:DbColumnName="fuel_id" msprop:design-time-name="bfe3f635-5bf5-4f66-b264-f57c208cd0eb" type="xs:int" />
+                  <xs:element name="engine_id" msprop:FriendlyName="engine_id" msprop:DbColumnName="engine_id" msprop:design-time-name="d6162914-b52b-40e2-ab3e-258af17397d4" type="xs:int" />
+                  <xs:element name="year_id" msprop:FriendlyName="year_id" msprop:DbColumnName="year_id" msprop:design-time-name="abca6bfc-dd6c-4f95-b9cc-b8c8cdee2726" type="xs:int" />
+                  <xs:element name="mileage_bucket_id" msprop:FriendlyName="mileage_bucket_id" msprop:DbColumnName="mileage_bucket_id" msprop:design-time-name="a543c84f-7b6f-493e-8d45-c71984476a5b" type="xs:int" minOccurs="0" />
+                  <xs:element name="age_bucket_id" msprop:FriendlyName="age_bucket_id" msprop:DbColumnName="age_bucket_id" msprop:design-time-name="ac9b15cf-12a0-402f-a5f7-e57d970c1563" type="xs:int" minOccurs="0" />
+                  <xs:element name="price_usd" msprop:FriendlyName="price_usd" msprop:DbColumnName="price_usd" msprop:design-time-name="bfaefa98-2963-4dda-a5a9-5420a66aeeb2" type="xs:decimal" />
+                  <xs:element name="mileage_km" msprop:FriendlyName="mileage_km" msprop:DbColumnName="mileage_km" msprop:design-time-name="2c3d0f33-c1d2-4114-8740-c6cfa75acf02" type="xs:int" />
+                  <xs:element name="age" msprop:FriendlyName="age" msprop:DbColumnName="age" msprop:design-time-name="16afd079-5fb4-4c9c-8bc7-cba9d2139f51" type="xs:int" />
+                  <xs:element name="price_per_1k_km" msprop:FriendlyName="price_per_1k_km" msprop:DbColumnName="price_per_1k_km" msprop:design-time-name="c227367e-d6fd-4cbe-948f-1e34ad13e200" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="overprice_threshold" msprop:FriendlyName="overprice_threshold" msprop:DbColumnName="overprice_threshold" msprop:design-time-name="382f61d0-84ae-46d4-a8b2-22299ba07e1b" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="is_overpriced" msprop:FriendlyName="is_overpriced" msprop:DbColumnName="is_overpriced" msprop:design-time-name="f5192a22-272d-4981-a3de-e14a6780f3b0" type="xs:boolean" minOccurs="0" />
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
@@ -229,10 +173,6 @@
           <xs:selector xpath=".//dbo_DIM_MILEAGE_BUCKET" />
           <xs:field xpath="mileage_bucket_id" />
         </xs:unique>
-        <xs:unique name="dbo_DIM_MODEL_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-          <xs:selector xpath=".//dbo_DIM_MODEL" />
-          <xs:field xpath="model_id" />
-        </xs:unique>
         <xs:unique name="dbo_DIM_YEAR_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
           <xs:selector xpath=".//dbo_DIM_YEAR" />
           <xs:field xpath="year_id" />
@@ -244,10 +184,6 @@
         <xs:keyref name="FK_Fact_Fuel" refer="dbo_DIM_FUEL_Constraint1">
           <xs:selector xpath=".//dbo_FACT_CAR_LISTING" />
           <xs:field xpath="fuel_id" />
-        </xs:keyref>
-        <xs:keyref name="FK_Fact_Model" refer="dbo_DIM_MODEL_Constraint1">
-          <xs:selector xpath=".//dbo_FACT_CAR_LISTING" />
-          <xs:field xpath="model_id" />
         </xs:keyref>
         <xs:keyref name="FK_Fact_Mileage" refer="dbo_DIM_MILEAGE_BUCKET_Constraint1">
           <xs:selector xpath=".//dbo_FACT_CAR_LISTING" />
@@ -268,10 +204,6 @@
         <xs:keyref name="FK_Fact_Age" refer="Constraint1">
           <xs:selector xpath=".//dbo_FACT_CAR_LISTING" />
           <xs:field xpath="age_bucket_id" />
-        </xs:keyref>
-        <xs:keyref name="FK_DIM_Brand" refer="dbo_DIM_BRAND_Constraint1">
-          <xs:selector xpath=".//dbo_DIM_MODEL" />
-          <xs:field xpath="brand_id" />
         </xs:keyref>
       </xs:element>
     </xs:schema>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36705.20 d17.14
+VisualStudioVersion = 17.14.36717.8 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SSAS", "SSAS.dwproj", "{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}"
 EndProject
@@ -18,6 +18,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F5864F23-500D-42D6-A654-35A21862B117}
+		SolutionGuid = {9BA56BBE-EBE0-47F4-ADCB-5287AC54A9E4}
 	EndGlobalSection
 EndGlobal

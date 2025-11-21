@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ec42eced-fb8b-4205-b6bc-f2f0d11b0fa8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f89ccea4-96fa-4039-b384-37390b7072cc" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>DIM MILEAGE BUCKET</ID>
   <Name>DIM MILEAGE BUCKET</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -42,114 +42,28 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="f8a81edf-5e5a-4c4a-8928-5860f7276241">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="7d0e6bb4-da7a-4da0-9327-a43e89250899">
     <DataSourceViewID>SSIS</DataSourceViewID>
   </Source>
   <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="7b1a154f-7b3b-47f2-b23f-d3b25e7c1835">
+  <ErrorConfiguration dwd:design-time-name="375aca59-500d-4d7a-9ca1-cf260958a710">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="6e5b1b77-6112-4122-a648-ea86fe8d4774">
+    <Attribute dwd:design-time-name="141e46e8-5c07-4d3d-b9fe-b0dd82828f8d">
       <ID>Mileage Bucket Id</ID>
       <Name>Mileage Bucket Id</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="c2598262-89fe-49f0-9076-5e08880f4162">
+        <KeyColumn dwd:design-time-name="87322412-bccd-42c4-b6bc-8c8f771310f4">
           <DataType>Integer</DataType>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="8d437166-0dd7-445b-9f90-355cb0f97d9f">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8a0178ba-6bbd-42ae-95d0-f99aff9d757b">
             <TableID>dbo_DIM_MILEAGE_BUCKET</TableID>
             <ColumnID>mileage_bucket_id</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="1cb0fa8f-7247-4405-87ab-fa519be93eaa">
-          <AttributeID>Mileage Bucket Label</AttributeID>
-          <Name>Mileage Bucket Label</Name>
-        </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="50556934-34ba-4403-875a-a6a004c0b1e0">
-          <AttributeID>Mileage Bucket Order</AttributeID>
-          <Name>Mileage Bucket Order</Name>
-        </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="48c8f9fd-e67c-4776-9a73-fe6ea1662e9b">
-          <AttributeID>Min Km</AttributeID>
-          <Name>Min Km</Name>
-        </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="217c9087-c148-414a-8cfa-31782008efc1">
-          <AttributeID>Max Km</AttributeID>
-          <Name>Max Km</Name>
-        </AttributeRelationship>
-      </AttributeRelationships>
-      <OrderBy>Key</OrderBy>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="5b570cbd-467e-48ea-90e5-49465da98ea2">
-      <ID>Mileage Bucket Label</ID>
-      <Name>Mileage Bucket Label</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="becb646b-af3f-495f-b63f-0ab0cdbada6e">
-          <DataType>WChar</DataType>
-          <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="09c567cd-75e9-4da2-8af1-de68b5ef8d4a">
-            <TableID>dbo_DIM_MILEAGE_BUCKET</TableID>
-            <ColumnID>mileage_bucket_label</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <OrderBy>Key</OrderBy>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="487531ff-faa8-45a7-9c2e-d842ad4efa7e">
-      <ID>Mileage Bucket Order</ID>
-      <Name>Mileage Bucket Order</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="2837573e-69bf-4d33-a3c4-dc3a1dd97d5e">
-          <DataType>WChar</DataType>
-          <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="f1258338-4001-4b50-bba7-6deaa83dcdba">
-            <TableID>dbo_DIM_MILEAGE_BUCKET</TableID>
-            <ColumnID>mileage_bucket_order</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <OrderBy>Key</OrderBy>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="20c37054-d7d5-4f19-afe7-02c66468ef34">
-      <ID>Min Km</ID>
-      <Name>Min Km</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="adc82494-94ea-4854-bb3c-540fdd372fa4">
-          <DataType>WChar</DataType>
-          <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="f9476873-8f3d-4bcd-89cf-15e1f425b990">
-            <TableID>dbo_DIM_MILEAGE_BUCKET</TableID>
-            <ColumnID>min_km</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <OrderBy>Key</OrderBy>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="738cabf7-c5e3-4857-95f6-116d0f76203e">
-      <ID>Max Km</ID>
-      <Name>Max Km</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="d61f8204-84f4-4953-8a73-9cd91a2bc989">
-          <DataType>WChar</DataType>
-          <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1bd95538-3109-4f40-8220-91c7ec7a8a5b">
-            <TableID>dbo_DIM_MILEAGE_BUCKET</TableID>
-            <ColumnID>max_km</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
