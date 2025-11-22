@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c503e956-7944-4e5b-b28c-4d7155d93dc5" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="49f3e72e-c959-45e1-89da-ebacbe749ab3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>DIM YEAR</ID>
   <Name>DIM YEAR</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -42,26 +42,48 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="2f0bb001-fe22-45db-a750-b71cb102eeee">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="e12dcd19-f0cd-4d3f-ac66-43b80c37831b">
     <DataSourceViewID>SSIS</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="fbfdb121-331a-42d1-b942-478d7cab70e1">
+  <ErrorConfiguration dwd:design-time-name="5bd88366-aa7e-4960-aed1-7cc2f5080dd4">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="10d831d4-3610-4202-9503-c1fe748f130c">
+    <Attribute dwd:design-time-name="59526bc2-1a36-4039-813b-2b1b7eccb3d5">
       <ID>Year Id</ID>
       <Name>Year Id</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="d4373b5d-06b8-4b22-b560-9ca9ccb58a60">
+        <KeyColumn dwd:design-time-name="4afec96c-7b84-4927-9111-74a3bec6b07b">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="df5c9ebd-2191-4b85-bc82-b2218a7504d6">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="39ce5cf0-9487-433c-bd77-36c1c111ccd1">
             <TableID>dbo_DIM_YEAR</TableID>
             <ColumnID>year_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="eafcb892-57f3-49f5-8b94-2bbb89bfce4f">
+          <AttributeID>Manufacture Year</AttributeID>
+          <Name>Manufacture Year</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="92a8e563-cb3b-466b-be2b-4706949d013b">
+      <ID>Manufacture Year</ID>
+      <Name>Manufacture Year</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ef20bef4-e336-498e-b3dd-bcfccfe01b27">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f8f8328f-f6fc-4515-a466-de7b0b4f355a">
+            <TableID>dbo_DIM_YEAR</TableID>
+            <ColumnID>manufacture_year</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
