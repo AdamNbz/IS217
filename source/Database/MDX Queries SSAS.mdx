@@ -1,0 +1,215 @@
+-- Câu truy vấn 1. Thống kê thị phần của từng model xe trong từng hãng xe.
+WITH
+SET [BrandModelWithData] AS
+    NONEMPTY(
+        [DIM BRAND].[Brand].[Brand].Members
+      * [DIM BRAND].[Model].[Model].Members,
+        { [Measures].[FACT CAR LISTING Count],
+          [Measures].[Market Share %] }
+    )
+SELECT
+    { [Measures].[Market Share %] } ON COLUMNS,
+    ORDER(
+        [BrandModelWithData],
+        [Measures].[Market Share %],
+        BDESC
+    ) ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 2. Thống kê giá trung bình của xe, giá trung bình trên 1000 km và số lượng xe của từng nhóm tuổi xe.
+SELECT
+  {
+    [Measures].[Avg Price],
+	[Measures].[Avg Price per 1k km],
+	[Measures].[FACT CAR LISTING Count]
+  } 
+  ON COLUMNS,
+  NONEMPTY(
+	FILTER(
+		[DIM AGE BUCKET].[Age Bucket Label].Members,
+		UCASE([DIM AGE BUCKET].[Age Bucket Label].CurrentMember.Name) <> "ALL"
+	)
+  )
+  ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 3. Thống kê giá trung bình giữa các nhóm quãng đường đã đi (dưới 20k km, 20–50k km, 50–100k km, trên 100k km).
+WITH
+SET [MileageBuckets_NoUnknown_NoAll] AS
+    FILTER(
+        [DIM MILEAGE BUCKET].[Mileage Bucket Label].Members,
+        NOT [DIM MILEAGE BUCKET].[Mileage Bucket Label].CurrentMember
+            IS [DIM MILEAGE BUCKET].[Mileage Bucket Label].DefaultMember
+        AND UCASE(
+            [DIM MILEAGE BUCKET].[Mileage Bucket Label].CurrentMember.Name
+        ) <> "UNKNOWN"
+    )
+SELECT 
+    { [Measures].[Avg Price] } ON COLUMNS,
+    ORDER(
+        [MileageBuckets_NoUnknown_NoAll],
+        [DIM MILEAGE BUCKET].[Mileage Bucket Order].MemberValue,
+        BASC
+    ) ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 4. Thống kê giá trung bình của xe theo tuổi xe (Tuổi xe = Năm hiện tại – Năm sản xuất).
+SELECT { [Measures].[Avg Price] } ON COLUMNS,
+       ORDER([DIM YEAR].[Manufacture Year].[Manufacture Year].Members,
+             [DIM YEAR].[Manufacture Year].MemberValue, BASC) ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 5. Liệt kê top 10 mẫu xe “giá trị” nhất tính theo giá trung bình trên 1000 km thấp nhất.
+WITH
+SET [ModelsWithPricePerKm] AS
+    FILTER(
+        [DIM BRAND].[Model].[Model].Members,
+        NOT ISEMPTY([Measures].[Avg Price per 1k km])
+    )
+SELECT 
+    { [Measures].[Avg Price per 1k km] } ON COLUMNS,
+    TOPCOUNT(
+        [ModelsWithPricePerKm],
+        10,
+        -[Measures].[Avg Price per 1k km]
+    ) ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 6. Thống kê giá trung bình xe và số lượng xe được đăng bán của các model thuộc hãng Toyota.
+SELECT
+    { [Measures].[Avg Price],
+      [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
+    NON EMPTY
+    FILTER(
+        [DIM BRAND].[Brand-Model].[Model].Members,
+        [DIM BRAND].[Brand-Model].CURRENTMEMBER.PARENT.MEMBER_CAPTION = "Toyota"
+    ) ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 7. Liệt kê top 5 mẫu xe có số lượng xe đăng bán nhiều nhất
+WITH
+SET [BrandLeaf] AS
+    [DIM BRAND].[Brand].[Brand].Members
+  - { [DIM BRAND].[Brand].DefaultMember }
+SET [TopModelEachBrand] AS
+    GENERATE(
+        [BrandLeaf],
+        TOPCOUNT(
+            NONEMPTY(
+                [DIM BRAND].[Model].[Model].Members,
+                [Measures].[FACT CAR LISTING Count]
+            ),
+            5,
+            [Measures].[FACT CAR LISTING Count]
+        )
+    )
+SELECT
+    { [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
+    [TopModelEachBrand] ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 8. Thống kê tỷ lệ xe bị overpriced của từng mẫu xe
+WITH
+SET [BrandsWithData] AS
+  NONEMPTY(
+    [DIM BRAND].[Model].[Model].Members,
+    [Measures].[FACT CAR LISTING Count]
+  )
+SELECT
+    [Measures].[Overpriced %] ON COLUMNS,
+  [BrandsWithData] ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 9. Thống kê số lượng xe đăng bán, giá trung bình xe và thị phần của từng hãng xe sử dụng nhiên liệu Petrol.
+WITH
+SET [BrandsWithData] AS
+  NONEMPTY(
+    [DIM BRAND].[Brand].[Brand].Members,
+    [Measures].[FACT CAR LISTING Count]
+  )
+SELECT
+  {
+    [Measures].[FACT CAR LISTING Count],
+    [Measures].[Avg Price],
+    [Measures].[Market Share %]
+  } ON COLUMNS,
+  [BrandsWithData] ON ROWS
+FROM [SSIS]
+WHERE ( [DIM FUEL].[Fuel Type].&[Petrol] );
+
+-- Câu truy vấn 10. Thống kê giá trung bình xe của từng mẫu xe trong nhóm tuổi xe 3-5 năm
+WITH
+SET [BrandsWithData] AS
+  NONEMPTY(
+    [DIM BRAND].[Model].[Model].Members,
+    [Measures].[FACT CAR LISTING Count]
+  )
+SELECT
+  [Measures].[Avg Price] ON COLUMNS,
+  [BrandsWithData] ON ROWS
+FROM [SSIS]
+WHERE (
+  HEAD(
+    FILTER(
+      [DIM AGE BUCKET].[Age Bucket Label].Members,
+      [DIM AGE BUCKET].[Age Bucket Label].CurrentMember.Name = "3-5y"
+    ),
+    1
+  )
+);
+
+--Câu truy vấn 11. Thống kê số lượng xe được đăng bán từ năm 2000 đến năm 2005.
+WITH
+SET [Year_2000_2005] AS
+    [DIM YEAR].[Manufacture Year].&[2000] :
+    [DIM YEAR].[Manufacture Year].&[2005]
+SELECT
+    { [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
+    NON EMPTY
+        [Year_2000_2005] ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 12. Thống kê giá trung bình xe theo từng nhóm quãng đường trong từng nhóm tuổi xe.
+SELECT
+  { [Measures].[Avg Price] } ON COLUMNS,
+  NON EMPTY
+    CROSSJOIN(
+      [DIM AGE BUCKET].[Age Bucket Label].DefaultMember.Children,
+      [DIM MILEAGE BUCKET].[Mileage Bucket Label].DefaultMember.Children
+    ) ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 13. Liệt kê top 10 mẫu xe đắt nhất (sắp xếp theo giá trung bình).
+SELECT { [Measures].[Avg Price] } ON COLUMNS,
+       TOPCOUNT([DIM BRAND].[Brand-Model].[Model], 10, [Measures].[Avg Price]) ON ROWS
+FROM [SSIS];
+
+-- Câu truy vấn 14. Thống kê số lượng xe được đăng bán theo dung tích động cơ xe.
+SELECT
+  { [Measures].[FACT CAR LISTING Count] } ON COLUMNS,
+  NONEMPTY(
+	FILTER(
+		[DIM ENGINE].[Engine Size L].Members,
+		UCASE([DIM ENGINE].[Engine Size L].CurrentMember.Name) <> "ALL"
+	)
+  )
+  ON ROWS
+FROM [SSIS];
+
+--Câu 15. Liệt kê top 10 hãng xe có median của giá trung bình xe theo mẫu xe cao nhất.
+WITH
+SET [BrandsWithMedian] AS
+    FILTER(
+        [DIM BRAND].[Brand].Members,
+        NOT ISEMPTY([Measures].[Median Model Avg])
+		AND
+		UCASE([DIM BRAND].[Brand].CurrentMember.Name) <> "ALL"
+    )
+SELECT
+    { [Measures].[Median Model Avg] } ON COLUMNS,
+    TOPCOUNT(
+        [BrandsWithMedian],
+        10,
+        [Measures].[Median Model Avg]
+    ) ON ROWS
+FROM [SSIS];

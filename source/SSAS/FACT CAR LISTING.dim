@@ -1,0 +1,228 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="cf83a5cb-e6f1-463f-9743-36e64e38c3ef" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>FACT CAR LISTING</ID>
+  <Name>FACT CAR LISTING</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2678" scrolltop="-4088" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9075" y="13176" backcolor="3948098" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FACT_CAR_LISTING" left="73" top="450" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3678" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00005e0e000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FACT_CAR_LISTING" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2678</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4088</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>73</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>450</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="5584d049-c607-405e-a190-31fcd54be151">
+    <DataSourceViewID>SSIS</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="f675b634-52be-4b55-a552-ebed645467d1">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="c499444b-8123-431b-b0f7-2328ee1a6cca">
+      <ID>Listing Id</ID>
+      <Name>Listing Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="570d2d1b-51eb-47e8-b18b-446f22f63364">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="880e0cc2-71e3-47a6-a1b6-b60fd2e6bd04">
+            <TableID>dbo_FACT_CAR_LISTING</TableID>
+            <ColumnID>listing_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="61280aa9-e57c-4824-8684-b3289c334e26">
+          <AttributeID>Age Bucket Id</AttributeID>
+          <Name>Age Bucket Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6629703c-ef08-46df-a1f0-ea76a8ee7866">
+          <AttributeID>Year Id</AttributeID>
+          <Name>Year Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a2b129cd-8756-44c7-b6e1-0480093540d9">
+          <AttributeID>Brand Id</AttributeID>
+          <Name>Brand Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3ae8f635-32cd-4dd9-9ed1-fc30b9081ed2">
+          <AttributeID>Engine Id</AttributeID>
+          <Name>Engine Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="df57370d-24fc-403b-8cd1-cc8d0fc37cd1">
+          <AttributeID>Mileage Bucket Id</AttributeID>
+          <Name>Mileage Bucket Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5357ca3f-e621-44e5-94d3-4c90759a2cac">
+          <AttributeID>Fuel Id</AttributeID>
+          <Name>Fuel Id</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="09c734b7-1b3d-4fbd-9a4b-158a541b64e3">
+      <ID>Age Bucket Id</ID>
+      <Name>Age Bucket Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8b90218b-abe4-4ca2-94c6-513b2db7ada5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e77c9fa0-36a6-472a-a8d1-ec3c1541674f">
+            <TableID>dbo_FACT_CAR_LISTING</TableID>
+            <ColumnID>age_bucket_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e008dbf2-5794-435a-9a16-ccc7825b4932">
+      <ID>Year Id</ID>
+      <Name>Year Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="00916e53-e4cc-46cf-b37c-b241ab6382d6">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0bfbdb4e-25e8-48df-80ce-91a2b89d2bda">
+            <TableID>dbo_FACT_CAR_LISTING</TableID>
+            <ColumnID>year_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8661f199-f00b-4aa7-b75f-9e9308cbf17b">
+      <ID>Brand Id</ID>
+      <Name>Brand Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="449f34f4-fcb6-4666-b1f9-acaddcb71fd4">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eb70089d-7342-4357-8287-a9ebfa107581">
+            <TableID>dbo_FACT_CAR_LISTING</TableID>
+            <ColumnID>brand_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f712fd08-4877-44dd-8b53-07527bac7c47">
+      <ID>Engine Id</ID>
+      <Name>Engine Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8bf6d1c8-3b84-4293-8032-3f9d32b1fede">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f1fd3e32-1515-4810-9294-26ea1a548b1a">
+            <TableID>dbo_FACT_CAR_LISTING</TableID>
+            <ColumnID>engine_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="36125206-96d6-48ab-b854-3081cac28351">
+      <ID>Mileage Bucket Id</ID>
+      <Name>Mileage Bucket Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9bfd7c7b-2772-4e29-94e3-e1ff076e1d47">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f63c0175-e913-488f-955d-a1574a38e169">
+            <TableID>dbo_FACT_CAR_LISTING</TableID>
+            <ColumnID>mileage_bucket_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4a847001-27e8-40c5-8b0a-ea54a1a2bdca">
+      <ID>Fuel Id</ID>
+      <Name>Fuel Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7d47c1e7-45d1-4cb7-b565-2ab0235533d5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bdcfd961-4e48-4fbb-917a-fcb938663b60">
+            <TableID>dbo_FACT_CAR_LISTING</TableID>
+            <ColumnID>fuel_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

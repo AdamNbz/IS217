@@ -1,0 +1,66 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\SSIS.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:SSIS.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM BRAND.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{9E1ADC32-8BEF-18F1-0604-FACDFEC6EE71}|SSAS.dwproj|solutionrelative:DIM BRAND.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 195,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{7cc9e714-2774-4fc6-8631-a07eee703286}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SSIS.cube [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\SSIS.cube",
+              "RelativeDocumentMoniker": "SSIS.cube",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\SSIS.cube [Design]",
+              "RelativeToolTip": "SSIS.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-21T19:18:51.331Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DIM BRAND.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM BRAND.dim",
+              "RelativeDocumentMoniker": "DIM BRAND.dim",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\IS217\\source\\SSAS\\DIM BRAND.dim [Design]",
+              "RelativeToolTip": "DIM BRAND.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-21T19:18:14.932Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
