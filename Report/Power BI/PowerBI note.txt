@@ -1,0 +1,5 @@
+PowerBI
+
++Cấu trúc thư mục:
+Report Source: Chứa source Power BI, sử dụng Power BI để xem
+Report PDF: chứa báo cáo định dạng PDF

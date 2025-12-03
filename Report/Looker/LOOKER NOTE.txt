@@ -1,0 +1,13 @@
+LOOKER:Không có tải file source report được, chỉ có thể xem bằng link
++Cấu trúc thư mục:
+Report Data: Chứa file excel dùng dữ liệu để vẽ
+Report PDF: chứa báo cáo định dạng PDF
++Link dẫn tới báo cáo: 
+-Báo cáo 1:
+https://lookerstudio.google.com/reporting/03867297-f676-43e2-a71c-40534dd3b993
+
+-Báo cáo 2:
+https://lookerstudio.google.com/reporting/7e471c85-829f-429d-bd51-7ef265fca5fe
+
+-Báo cáo 3: 
+https://lookerstudio.google.com/reporting/553dafe2-62b3-4911-88ab-3605e4d25953
